@@ -232,7 +232,7 @@
     "name_en": "",
     "name_ja": "",
     "primary_category": "餐飲",
-    "subcategory": "晚餐",
+    "subcategory": "午餐|晚餐",
     "business_type": "restaurant",
     "meal_tags": [
       "午餐",
@@ -249,7 +249,11 @@
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_010",
-    "display_order": 10
+    "display_order": 10,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:09:06.971Z"
   },
   {
     "map_label_name": "國立國父紀念館",
