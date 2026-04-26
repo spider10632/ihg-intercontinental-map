@@ -909,10 +909,13 @@ window.WANHUA_POI_DATA = [
     "name_zh": "一品 花 雕 雞 市民旗艦店",
     "name_en": "",
     "name_ja": "",
-    "primary_category": "商店",
-    "subcategory": "其他",
-    "business_type": "shop",
-    "meal_tags": [],
+    "primary_category": "餐飲",
+    "subcategory": "晚餐|宵夜",
+    "business_type": "restaurant",
+    "meal_tags": [
+      "晚餐",
+      "宵夜"
+    ],
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0446973,121.55273779999999",
     "address_zh": "105臺北市松山區市民大道四段207號",
     "phone": "02 2570 0388",
@@ -924,7 +927,11 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_035",
-    "display_order": 35
+    "display_order": 35,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:12:35.040Z"
   },
   {
     "map_label_name": "國家鐵道博物館",
