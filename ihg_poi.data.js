@@ -635,8 +635,8 @@ window.WANHUA_POI_DATA = [
     "name_en": "",
     "name_ja": "",
     "primary_category": "餐飲",
-    "subcategory": "午餐",
-    "business_type": "cafe",
+    "subcategory": "早餐|午餐|晚餐|咖啡",
+    "business_type": "restaurant",
     "meal_tags": [
       "午餐",
       "晚餐",
@@ -653,7 +653,11 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_025",
-    "display_order": 25
+    "display_order": 25,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:11:30.894Z"
   },
   {
     "map_label_name": "真芳碳烤吐司-信義創始店 台北早餐三明治",
