@@ -749,10 +749,13 @@
     "name_zh": "秦味館 Qin Wei Guan",
     "name_en": "",
     "name_ja": "",
-    "primary_category": "景點",
-    "subcategory": "其他",
-    "business_type": "attraction",
-    "meal_tags": [],
+    "primary_category": "餐飲",
+    "subcategory": "午餐|晚餐",
+    "business_type": "restaurant",
+    "meal_tags": [
+      "午餐",
+      "晚餐"
+    ],
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0399226,121.5546196",
     "address_zh": "106臺北市大安區延吉街138巷2號",
     "phone": "02 8771 3288",
@@ -764,7 +767,11 @@
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_029",
-    "display_order": 29
+    "display_order": 29,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:11:58.742Z"
   },
   {
     "map_label_name": "舞良麵 Dancing Noodles ｜東區必吃晚餐宵夜 延吉街 大巨蛋美食 無國界涼麵 麵飯（“不一樣乾麵”隔壁巷弄內）",
