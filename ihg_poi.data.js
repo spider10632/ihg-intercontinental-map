@@ -961,8 +961,8 @@ window.WANHUA_POI_DATA = [
     "name_en": "",
     "name_ja": "",
     "primary_category": "其他設施",
-    "subcategory": "其他",
-    "business_type": "hospital",
+    "subcategory": "醫院",
+    "business_type": "other",
     "meal_tags": [],
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0499097,121.5576835",
     "address_zh": "105臺北市松山區光復北路66號",
@@ -975,7 +975,11 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": false,
     "id": "ihg_037",
-    "display_order": 37
+    "display_order": 37,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:12:50.730Z"
   },
   {
     "map_label_name": "漢堡排 嘉 GARDEN CITY遠東大巨蛋店",
