@@ -308,10 +308,13 @@ window.WANHUA_POI_DATA = [
     "name_zh": "BURGER OUT",
     "name_en": "",
     "name_ja": "",
-    "primary_category": "景點",
-    "subcategory": "其他",
-    "business_type": "attraction",
-    "meal_tags": [],
+    "primary_category": "餐飲",
+    "subcategory": "午餐|晚餐",
+    "business_type": "restaurant",
+    "meal_tags": [
+      "午餐",
+      "晚餐"
+    ],
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0431633,121.563065",
     "address_zh": "11072臺北市信義區忠孝東路四段553巷22弄2號",
     "phone": "02 2756 6860",
@@ -323,7 +326,11 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_013",
-    "display_order": 13
+    "display_order": 13,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:10:14.839Z"
   },
   {
     "map_label_name": "旬味 自然鍋物-台北美食 信義區美食 信義區火鍋 信義區火鍋推薦 信義區好吃推薦 信義區火鍋推薦 國父紀念館信義東區美食 台北大巨蛋美食 個人鴛鴦火鍋 火鍋美食",
