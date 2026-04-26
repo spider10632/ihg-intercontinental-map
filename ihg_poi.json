@@ -681,7 +681,11 @@
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_026",
-    "display_order": 26
+    "display_order": 26,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:11:37.307Z"
   },
   {
     "map_label_name": "年三十鐵板串燒居酒屋 光復店",
