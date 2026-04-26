@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InterContinental 台北洲際酒店週邊地圖</title>
+    <meta
+      name="description"
+      content="以 InterContinental 台北洲際酒店為中心的大巨蛋週邊地圖，支援分類篩選並可直接開啟 Google Maps。"
+    />
+    <meta name="theme-color" content="#1f1a15" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="IHG Map" />
+    <link rel="manifest" href="./manifest.webmanifest?v=20260417-1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/cm-icon-180.png?v=20260417-1" />
+    <link rel="icon" type="image/png" sizes="64x64" href="./assets/cm-icon-64.png?v=20260417-1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&family=Noto+Serif+TC:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260417-1" />
+  </head>
+  <body>
+    <div class="ambient ambient--one"></div>
+    <div class="ambient ambient--two"></div>
+
+    <div class="page-shell">
+      <header class="hero hero--title-only">
+        <div class="hero__title-row">
+          <div class="hero__title-stack">
+            <h1 id="page-title">InterContinental 台北洲際酒店週邊地圖</h1>
+          </div>
+        </div>
+
+        <div class="hero__bottom-row">
+          <nav class="hero-quick-nav" aria-label="Section quick navigation">
+            <a id="jump-hotel" class="hero-jump" href="#panel-hotel">飯店資訊</a>
+            <a id="jump-filters" class="hero-jump" href="#panel-filters">搜尋景點</a>
+            <button id="jump-favorites" class="hero-jump hero-jump--button" type="button">蒐藏清單</button>
+            <a id="jump-spotlight" class="hero-jump" href="#panel-spotlight">地圖聚焦</a>
+          </nav>
+
+          <div class="hero-home-entry">
+            <button
+              id="add-home-btn"
+              class="hero-jump hero-jump--button hero-jump--helper"
+              type="button"
+              aria-expanded="false"
+              aria-controls="add-home-hint"
+            >
+              加入主畫面
+            </button>
+            <p id="add-home-hint" class="hero-home-hint" hidden>
+              iPhone：點右上角分享 → 加入主畫面
+            </p>
+          </div>
+
+          <section id="weather-widget" class="weather-widget" aria-live="polite">
+            <p id="weather-title" class="weather-widget__title">今日天氣</p>
+            <p id="weather-summary" class="weather-widget__summary">讀取中...</p>
+            <p id="weather-rain" class="weather-widget__rain">降雨機率 --%</p>
+          </section>
+
+          <div class="hero__footer-controls">
+            <select id="lang-select" class="lang-select" aria-label="Language">
+              <option value="zh">中文</option>
+              <option value="en">EN</option>
+              <option value="ja">日本語</option>
+            </select>
+          </div>
+        </div>
+      </header>
+
+      <section id="panel-concierge" class="panel panel--concierge jump-target">
+        <div class="section-heading">
+          <h2 id="concierge-title">服務中心推薦</h2>
+          <p id="concierge-subtitle" class="concierge-subtitle">提供第一次來訪與周邊精選建議，可自由收合查看。</p>
+        </div>
+
+        <section id="concierge-first" class="concierge-block">
+          <div class="section-heading section-heading--collapse-row">
+            <h3 id="concierge-first-title" class="concierge-block-title">第一次來</h3>
+            <button
+              id="toggle-concierge-first"
+              class="panel-collapse-toggle"
+              type="button"
+              aria-controls="concierge-first-body"
+              aria-expanded="true"
+            >
+              −
+            </button>
+          </div>
+          <div id="concierge-first-body" class="panel-collapse-body">
+            <div id="concierge-first-list" class="concierge-first-list"></div>
+          </div>
+        </section>
+
+        <section id="concierge-picks" class="concierge-block">
+          <div class="section-heading section-heading--collapse-row">
+            <h3 id="picks-title" class="concierge-block-title">周邊精選</h3>
+            <button
+              id="toggle-picks"
+              class="panel-collapse-toggle"
+              type="button"
+              aria-controls="concierge-picks-body"
+              aria-expanded="true"
+            >
+              −
+            </button>
+          </div>
+          <div id="concierge-picks-body" class="panel-collapse-body">
+            <div id="picks-list" class="picks-list"></div>
+          </div>
+        </section>
+      </section>
+
+      <section id="panel-hotel" class="hero hero--bottom panel--hotel jump-target">
+        <div class="section-heading section-heading--hero section-heading--collapse-row">
+          <h2 id="hotel-info-title">飯店基本資訊</h2>
+          <button
+            id="toggle-hotel"
+            class="panel-collapse-toggle panel-collapse-toggle--hero"
+            type="button"
+            aria-controls="panel-hotel-body"
+            aria-expanded="true"
+          >
+            −
+          </button>
+        </div>
+        <div id="panel-hotel-body" class="panel-collapse-body">
+          <div class="hero__card hero__card--bottom">
+            <p id="base-label" class="hero__card-label">Concierge Base</p>
+            <h2 id="base-name">InterContinental 台北洲際酒店</h2>
+            <p>InterContinental Taipei</p>
+            <dl class="hero__facts">
+              <div>
+                <dt id="base-location-label">位置</dt>
+                <dd>台北市信義區新仁里忠孝東路四段535號</dd>
+              </div>
+              <div>
+                <dt id="base-nearby-label">鄰近</dt>
+                <dd>國父紀念館站 / 市政府站</dd>
+              </div>
+              <div>
+                <dt id="base-version-label">飯店電話</dt>
+                <dd>待更新</dd>
+              </div>
+            </dl>
+            <a
+              id="base-open-btn"
+              class="button button--hero"
+              href="https://www.google.com/maps/search/?api=1&query=InterContinental+Taipei"
+              target="_blank"
+              rel="noreferrer"
+            >
+              開啟飯店 Google Maps
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <main class="experience">
+        <aside class="rail">
+          <section id="panel-filters" class="panel panel--filters jump-target">
+            <div class="section-heading section-heading--collapse-row">
+              <div>
+                <p class="eyebrow">Filters</p>
+                <h2 id="filters-title">搜尋景點</h2>
+              </div>
+              <button
+                id="toggle-filters"
+                class="panel-collapse-toggle"
+                type="button"
+                aria-controls="panel-filters-body"
+                aria-expanded="true"
+              >
+                −
+              </button>
+            </div>
+
+            <div id="panel-filters-body" class="panel-collapse-body">
+              <p id="guest-note-text" class="filters-note">
+                使用方式：1. 在「搜尋景點」選分類或輸入關鍵字。2. 按「搜尋」後會自動跳到「搜尋結果」。3. 點任一地點卡可切換地圖，並可直接開啟 Google Maps 或從飯店出發導航。
+              </p>
+
+              <label class="search-field">
+                <span id="search-label">搜尋名稱、地址或基本介紹</span>
+                <input id="search-input" type="search" placeholder="例如：夜市、星巴克、龍山寺" />
+              </label>
+
+              <div class="toggle-row">
+                <label class="switch">
+                  <input id="active-only" type="checkbox" checked />
+                  <span id="active-only-text">只顯示啟用資料</span>
+                </label>
+                <button id="reset-filters" class="text-button" type="button">清除條件</button>
+              </div>
+
+              <div class="filter-block">
+                <div class="filter-block__head">
+                  <h3 id="quick-title">快速篩選</h3>
+                  <span id="quick-subtitle" hidden></span>
+                </div>
+                <div class="quick-filter-strip">
+                  <button id="quick-food" class="quick-filter" type="button" data-quick-primary="餐飲">在地美食</button>
+                  <button id="quick-sight" class="quick-filter" type="button" data-quick-primary="景點">必看景點</button>
+                  <button id="quick-transport" class="quick-filter" type="button" data-quick-primary="交通">交通節點</button>
+                  <button id="quick-shopping" class="quick-filter" type="button" data-quick-primary="商店">生活採買</button>
+                  <button id="quick-facility" class="quick-filter" type="button" data-quick-primary="其他設施">旅宿機能</button>
+                  <button id="quick-all" class="quick-filter" type="button" data-quick-filter="all">全部推薦</button>
+                </div>
+              </div>
+
+              <div class="filter-block">
+                <div class="filter-block__head">
+                  <h3 id="primary-title">主分類</h3>
+                  <span id="primary-count"></span>
+                </div>
+                <div id="primary-filters" class="chip-wrap"></div>
+              </div>
+
+              <div class="filter-block">
+                <div class="filter-block__head">
+                  <h3 id="subcategory-title">次分類</h3>
+                  <span id="subcategory-count"></span>
+                </div>
+                <div id="subcategory-filters" class="chip-wrap"></div>
+              </div>
+
+              <div id="meal-block" class="filter-block">
+                <div class="filter-block__head">
+                  <h3 id="meal-title">餐食標籤</h3>
+                  <span id="meal-count"></span>
+                </div>
+                <div id="meal-filters" class="chip-wrap"></div>
+              </div>
+
+              <div class="filter-actions">
+                <button id="apply-filters" class="button button--slim" type="button">搜尋</button>
+                <span id="filter-pending" class="filter-pending" hidden>已修改條件，按「搜尋」更新結果。</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel panel--summary" hidden>
+            <div class="section-heading">
+              <p class="eyebrow">Overview</p>
+              <h2 id="overview-title">目前結果</h2>
+            </div>
+
+            <div class="summary-grid">
+              <article class="summary-card">
+                <span id="summary-match-label">符合條件</span>
+                <strong id="result-count">0</strong>
+              </article>
+              <article class="summary-card">
+                <span id="summary-focus-label">地圖焦點</span>
+                <strong id="focus-label">InterContinental 台北洲際酒店</strong>
+              </article>
+            </div>
+
+            <p id="status-text" class="status-text">目前以 InterContinental 台北洲際酒店為地圖中心，篩選後可切換成你想看的單一重點地點。</p>
+          </section>
+        </aside>
+
+        <section id="panel-collection" class="collection panel jump-target">
+          <div class="collection__header">
+            <div class="section-heading">
+              <p class="eyebrow">Collection</p>
+              <h2 id="collection-title">搜尋結果</h2>
+            </div>
+            <p id="collection-hint" class="collection__hint" hidden></p>
+          </div>
+
+          <div id="results" class="card-list"></div>
+        </section>
+      </main>
+
+      <section id="panel-favorites" class="panel panel--favorites panel--favorites-bottom jump-target" hidden>
+        <div class="section-heading">
+          <p class="eyebrow">My List</p>
+          <h2 id="favorites-title">蒐藏清單</h2>
+        </div>
+
+        <div class="filter-block__head">
+          <span id="favorites-count">0 筆</span>
+          <div class="favorites-inline-actions">
+            <button id="favorites-clear" class="text-button" type="button">清空</button>
+            <button id="favorites-back-search" class="text-button" type="button">回到搜尋</button>
+          </div>
+        </div>
+
+        <p id="favorites-hint" class="status-text">在地點卡按「加入蒐藏」，就會出現在這裡。</p>
+        <div id="favorites-list" class="favorites-list"></div>
+      </section>
+
+      <section id="panel-gifts" class="panel panel--concierge-gifts jump-target">
+        <div class="section-heading section-heading--collapse-row">
+          <h2 id="concierge-gift-title">伴手禮推薦</h2>
+          <button
+            id="toggle-concierge-gift"
+            class="panel-collapse-toggle"
+            type="button"
+            aria-controls="panel-gifts-body"
+            aria-expanded="true"
+          >
+            −
+          </button>
+        </div>
+        <div id="panel-gifts-body" class="panel-collapse-body">
+          <div id="concierge-gift-list" class="concierge-gift-list"></div>
+          <p id="concierge-order-note" class="concierge-order-note">如需協助訂購，請洽禮賓部</p>
+        </div>
+      </section>
+
+      <section id="panel-spotlight" class="spotlight spotlight--bottom panel jump-target">
+        <div class="spotlight__header section-heading--collapse-row">
+          <div class="section-heading">
+            <p class="eyebrow">Spotlight</p>
+            <h2 id="spotlight-title">地圖聚焦</h2>
+          </div>
+          <button
+            id="toggle-spotlight"
+            class="panel-collapse-toggle"
+            type="button"
+            aria-controls="panel-spotlight-body"
+            aria-expanded="true"
+          >
+            −
+          </button>
+          <p id="spotlight-note" class="spotlight__note" hidden></p>
+        </div>
+
+        <div id="panel-spotlight-body" class="panel-collapse-body spotlight__content">
+          <div class="spotlight__intro">
+            <div class="spotlight__title-row">
+              <div>
+                <p id="selected-kicker" class="spotlight__kicker">Hotel Anchor</p>
+                <h3 id="selected-name">InterContinental 台北洲際酒店</h3>
+                <p id="selected-secondary" class="spotlight__secondary">InterContinental Taipei</p>
+              </div>
+              <span id="selected-status" class="pill">中心點</span>
+            </div>
+
+            <div class="spotlight__badges">
+              <span id="selected-primary" class="tag">其他設施</span>
+              <span id="selected-subcategory" class="tag">飯店</span>
+              <span id="selected-mrt" class="tag">國父紀念館站</span>
+            </div>
+
+            <p id="selected-address" class="spotlight__meta">台北市信義區新仁里忠孝東路四段535號</p>
+            <p id="selected-phone" class="spotlight__meta">電話：未提供</p>
+            <p id="selected-hours" class="spotlight__meta">24H front desk</p>
+            <p id="selected-notes" class="spotlight__notes">以 InterContinental 台北洲際酒店為中心開始探索大巨蛋周邊。</p>
+
+            <div class="spotlight__actions">
+              <a
+                id="selected-open"
+                class="button"
+                href="https://www.google.com/maps/search/?api=1&query=InterContinental+Taipei"
+                target="_blank"
+                rel="noreferrer"
+              >
+                查看目前地點
+              </a>
+              <a
+                id="selected-route"
+                class="button button--secondary"
+                href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E6%96%B0%E4%BB%81%E9%87%8C%E5%BF%A0%E5%AD%9D%E6%9D%B1%E8%B7%AF%E5%9B%9B%E6%AE%B5535%E8%99%9F&destination=%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E6%96%B0%E4%BB%81%E9%87%8C%E5%BF%A0%E5%AD%9D%E6%9D%B1%E8%B7%AF%E5%9B%9B%E6%AE%B5535%E8%99%9F"
+                target="_blank"
+                rel="noreferrer"
+              >
+                從飯店前往
+              </a>
+              <button id="selected-favorite" class="button button--ghost" type="button">加入蒐藏</button>
+            </div>
+          </div>
+
+          <div class="map-frame-shell">
+            <iframe
+              id="map-frame"
+              class="map-frame"
+              title="Google Maps"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=InterContinental%20Taipei&z=16&output=embed"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <button id="open-favorites" class="open-favorites" type="button" aria-label="開啟蒐藏清單">蒐藏清單</button>
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="回到頁面頂端">Top</button>
+    <p id="version-tag" class="version-tag version-tag--global">Version 3</p>
+
+    <script src="./google-maps-config.js?v=20260417-1"></script>
+    <script src="./ihg_poi.data.js?v=20260422-3"></script>
+    <script src="./app.js?v=20260426-11"></script>
+  </body>
+</html>

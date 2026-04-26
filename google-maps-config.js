@@ -1,0 +1,2 @@
+window.GOOGLE_MAPS_API_KEY = "AIzaSyAO_WNl59MPD8jVSkg_VczRMNTcFZNGppo";
+window.GOOGLE_MAPS_USE_EMBED_API = false;
