@@ -779,7 +779,7 @@ window.WANHUA_POI_DATA = [
     "name_en": "",
     "name_ja": "",
     "primary_category": "餐飲",
-    "subcategory": "宵夜",
+    "subcategory": "晚餐|宵夜",
     "business_type": "restaurant",
     "meal_tags": [
       "宵夜"
@@ -795,7 +795,11 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_030",
-    "display_order": 30
+    "display_order": 30,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:12:05.063Z"
   },
   {
     "map_label_name": "市府轉運站",
