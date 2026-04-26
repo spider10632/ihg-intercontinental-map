@@ -192,15 +192,42 @@ const hotelRecord =
   rawData.find((p) => p.id === "ihg_001");
 const HOTEL = { ...HOTEL_DEFAULT, ...(hotelRecord || {}), id: "hotel_center" };
 const HOTEL_AREA_HINT = inferHotelAreaHint(HOTEL.address_zh);
-const places = rawData
-  .filter((p) => p.id !== (hotelRecord?.id || ""))
-  .map((p) => ({
-    ...p,
-    subcategory: normalizeSubcategory(p.subcategory),
-    meal_tags: uniqueValues((Array.isArray(p.meal_tags) ? p.meal_tags : []).map(normalizeMealTag)),
-  }))
-  .filter((p) => !isSuppressedPlace(p) && !MANUAL_SUPPRESSED_PLACE_IDS.has(p.id))
-  .sort((a, b) => Number(a.display_order ?? 9999) - Number(b.display_order ?? 9999));
+const RUNTIME_PLACES_FALLBACK_URL = "https://ihg-admin-api.spider10632.workers.dev/api/admin/places?limit=800";
+let runtimePlacesHydrationPromise = null;
+let places = normalizeRuntimePlaces(rawData, hotelRecord?.id || "");
+
+function normalizeRuntimePlaces(inputData, excludedId = "") {
+  const normalizedExcludedId = normalizeText(excludedId);
+  return (Array.isArray(inputData) ? inputData : [])
+    .filter((place) => {
+      const id = normalizeText(place?.id);
+      return id && id !== normalizedExcludedId;
+    })
+    .map((place) => ({
+      ...place,
+      id: normalizeText(place.id),
+      map_label_name: normalizeText(place.map_label_name) || normalizeText(place.name_zh) || normalizeText(place.name),
+      name_zh: normalizeText(place.name_zh) || normalizeText(place.map_label_name) || normalizeText(place.name),
+      name_en: normalizeText(place.name_en),
+      name_ja: normalizeText(place.name_ja),
+      primary_category: normalizeText(place.primary_category),
+      subcategory: normalizeSubcategory(place.subcategory),
+      business_type: normalizeText(place.business_type),
+      meal_tags: uniqueValues((Array.isArray(place.meal_tags) ? place.meal_tags : []).map(normalizeMealTag)),
+      google_maps_url: normalizeText(place.google_maps_url) || normalizeText(place.maps_url),
+      address_zh: normalizeText(place.address_zh) || normalizeText(place.address),
+      phone: normalizeText(place.phone),
+      opening_hours: normalizeText(place.opening_hours),
+      near_mrt: normalizeText(place.near_mrt),
+      notes: normalizeText(place.notes),
+      source_status: normalizeText(place.source_status) || "map_only",
+      is_active: place.is_active !== false,
+      walk_10min_from_hotel: place.walk_10min_from_hotel === true,
+      display_order: Number.isFinite(Number(place.display_order)) ? Number(place.display_order) : 9999,
+    }))
+    .filter((place) => !isSuppressedPlace(place) && !MANUAL_SUPPRESSED_PLACE_IDS.has(place.id))
+    .sort((a, b) => Number(a.display_order ?? 9999) - Number(b.display_order ?? 9999));
+}
 const CONCIERGE_FIRST_TIME_FIXED_ITEMS = [
   {
     title: { zh: "RAINBOW WALK", en: "RAINBOW WALK", ja: "RAINBOW WALK" },
@@ -433,14 +460,23 @@ const dom = {
 };
 
 const filterValues = {
-  primary: uniqueValues(places.map((p) => p.primary_category)),
+  primary: [],
   subcategory: [WALK_10MIN_SUBCATEGORY],
-  meal: uniqueValues(places.flatMap((p) => p.meal_tags)),
+  meal: [],
 };
 
-init();
+refreshFilterValues();
+void init();
 
-function init() {
+async function init() {
+  const hydrated = await hydratePlacesFromApiIfNeeded();
+  if (hydrated) {
+    refreshFilterValues();
+    state.favorites = readFavorites();
+    state.walkingCache = readWalkingCache();
+    state.openingHoursCache = readOpeningHoursCache();
+    state.conciergeRandomPickByPrimary = {};
+  }
   sanitizeOpeningHoursCache();
   applyStaticText();
   initializeFilters();
@@ -452,6 +488,91 @@ function init() {
   render();
   refreshWalkingTimesInBackground();
   refreshOpeningHoursInBackground();
+}
+
+function listSubcategoryValues(rawValue) {
+  const normalized = normalizeSubcategory(rawValue);
+  if (!normalized) return [];
+  return uniqueValues(
+    normalized
+      .split("|")
+      .map((item) => normalizeSubcategory(item))
+      .filter(Boolean)
+  );
+}
+
+function refreshFilterValues() {
+  filterValues.primary = uniqueValues(
+    places
+      .map((place) => normalizeText(place.primary_category))
+      .filter(Boolean)
+  );
+
+  const subcategoryValues = uniqueValues(
+    places.flatMap((place) => listSubcategoryValues(place.subcategory))
+  ).filter((value) => value !== WALK_10MIN_SUBCATEGORY);
+
+  filterValues.subcategory = [WALK_10MIN_SUBCATEGORY, ...subcategoryValues];
+
+  filterValues.meal = uniqueValues(
+    places.flatMap((place) => getMealTags(place).map(normalizeMealTag))
+  );
+}
+
+function normalizeApiPlaceItem(item, index) {
+  const safeIndex = index + 1;
+  return {
+    id: normalizeText(item?.id) || `ihg_api_${String(safeIndex).padStart(3, "0")}`,
+    map_label_name: normalizeText(item?.name),
+    name_zh: normalizeText(item?.name),
+    name_en: "",
+    name_ja: "",
+    primary_category: normalizeText(item?.primary_category),
+    subcategory: normalizeSubcategory(item?.subcategory),
+    business_type: normalizeText(item?.business_type),
+    meal_tags: [],
+    google_maps_url: normalizeText(item?.maps_url),
+    address_zh: normalizeText(item?.address),
+    phone: normalizeText(item?.phone),
+    opening_hours: normalizeText(item?.opening_hours),
+    near_mrt: normalizeText(item?.near_mrt),
+    notes: normalizeText(item?.notes),
+    source_status: normalizeText(item?.source_status) || "map_only",
+    is_active: item?.is_active !== false,
+    walk_10min_from_hotel: item?.walk_10min_from_hotel === true,
+    display_order: Number.isFinite(Number(item?.display_order)) ? Number(item.display_order) : safeIndex,
+  };
+}
+
+async function hydratePlacesFromApiIfNeeded() {
+  if (places.length > 0) return false;
+  if (runtimePlacesHydrationPromise) return runtimePlacesHydrationPromise;
+
+  runtimePlacesHydrationPromise = (async () => {
+    try {
+      const response = await fetch(RUNTIME_PLACES_FALLBACK_URL, { cache: "no-store" });
+      if (!response.ok) return false;
+
+      const payload = await response.json();
+      const items = Array.isArray(payload?.items) ? payload.items : [];
+      if (!items.length) return false;
+
+      const normalized = normalizeRuntimePlaces(
+        items.map((item, index) => normalizeApiPlaceItem(item, index)),
+        hotelRecord?.id || ""
+      );
+
+      if (!normalized.length) return false;
+      places = normalized;
+      return true;
+    } catch (_error) {
+      return false;
+    } finally {
+      runtimePlacesHydrationPromise = null;
+    }
+  })();
+
+  return runtimePlacesHydrationPromise;
 }
 
 function readLang() {
@@ -946,10 +1067,20 @@ function hideFavoritesPanel(withScroll) {
 }
 
 function getConciergePoolByPrimary(primaryCategory) {
+  const businessTypeFallback = {
+    餐飲: new Set(["restaurant", "cafe", "dessert", "snack", "drink_shop"]),
+    景點: new Set(["attraction", "museum", "landmark", "park"]),
+    商店: new Set(["shop", "store", "mall", "market"]),
+  };
+  const expectedTypes = businessTypeFallback[primaryCategory] || new Set();
+
   return places.filter((place) =>
-    normalizeText(place.primary_category) === primaryCategory &&
-    !isSuppressedPlace(place) &&
-    !isClosedByGoogle(place)
+    (
+      normalizeText(place.primary_category) === primaryCategory ||
+      expectedTypes.has(normalizeText(place.business_type).toLowerCase())
+    ) &&
+      !isSuppressedPlace(place) &&
+      !isClosedByGoogle(place)
   );
 }
 
@@ -1890,8 +2021,9 @@ function applyFilters(place) {
   if (state.applied.subcategory.size) {
     const requiresWalk10 = state.applied.subcategory.has(WALK_10MIN_SUBCATEGORY);
     const normalSubcategories = [...state.applied.subcategory].filter((value) => value !== WALK_10MIN_SUBCATEGORY);
+    const placeSubcategories = listSubcategoryValues(place.subcategory);
     if (requiresWalk10 && !isWithin10MinWalk(place)) return false;
-    if (normalSubcategories.length && !normalSubcategories.includes(place.subcategory)) return false;
+    if (normalSubcategories.length && !normalSubcategories.some((value) => placeSubcategories.includes(value))) return false;
   }
   const useMealFilter = state.applied.primary.has("餐飲");
   if (useMealFilter && state.applied.meal.size && !getMealTags(place).some((tag) => state.applied.meal.has(tag))) return false;
