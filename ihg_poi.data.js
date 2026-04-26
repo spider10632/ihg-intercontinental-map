@@ -395,10 +395,13 @@ window.WANHUA_POI_DATA = [
     "name_zh": "HANNA Pasta Café パスタ カフェ",
     "name_en": "",
     "name_ja": "",
-    "primary_category": "景點",
-    "subcategory": "其他",
-    "business_type": "attraction",
-    "meal_tags": [],
+    "primary_category": "餐飲",
+    "subcategory": "午餐|晚餐",
+    "business_type": "restaurant",
+    "meal_tags": [
+      "午餐",
+      "晚餐"
+    ],
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.040281,121.56288939999999",
     "address_zh": "110臺北市信義區逸仙路42巷17號1樓",
     "phone": "02 8786 0518",
@@ -410,7 +413,11 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_016",
-    "display_order": 16
+    "display_order": 16,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:10:40.445Z"
   },
   {
     "map_label_name": "東引快刀手 光復店 (必吃知名宵夜美食、平價麵館 滷味小吃)",
