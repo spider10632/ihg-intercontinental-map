@@ -48,10 +48,14 @@
     "name_zh": "PRESERVE 遠東GARDEN CITY 大巨蛋店",
     "name_en": "",
     "name_ja": "",
-    "primary_category": "商店",
-    "subcategory": "其他",
-    "business_type": "shop",
-    "meal_tags": [],
+    "primary_category": "餐飲",
+    "subcategory": "早餐|午餐|晚餐",
+    "business_type": "restaurant",
+    "meal_tags": [
+      "早餐",
+      "午餐",
+      "晚餐"
+    ],
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0430378,121.5596193",
     "address_zh": "110臺北市信義區忠孝東路四段515號",
     "phone": "02 2761 3365",
@@ -63,7 +67,11 @@
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_003",
-    "display_order": 3
+    "display_order": 3,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:08:22.309Z"
   },
   {
     "map_label_name": "紫木槿韓餐酒館(遠東Garden City 大巨蛋店)",
@@ -100,7 +108,7 @@
     "name_en": "",
     "name_ja": "",
     "primary_category": "餐飲",
-    "subcategory": "午餐",
+    "subcategory": "午餐|晚餐|宵夜",
     "business_type": "restaurant",
     "meal_tags": [
       "午餐",
@@ -117,7 +125,11 @@
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_005",
-    "display_order": 5
+    "display_order": 5,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:08:37.201Z"
   },
   {
     "map_label_name": "捷運國父紀念館站(忠孝)",
