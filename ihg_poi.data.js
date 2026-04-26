@@ -70,10 +70,13 @@ window.WANHUA_POI_DATA = [
     "name_zh": "紫木槿韓餐酒館(遠東Garden City 大巨蛋店)",
     "name_en": "",
     "name_ja": "",
-    "primary_category": "商店",
-    "subcategory": "其他",
-    "business_type": "shop",
-    "meal_tags": [],
+    "primary_category": "餐飲",
+    "subcategory": "午餐|晚餐",
+    "business_type": "restaurant",
+    "meal_tags": [
+      "午餐",
+      "晚餐"
+    ],
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0416275,121.55952979999999",
     "address_zh": "110臺北市信義區忠孝東路四段515號",
     "phone": "02 2766 9905",
@@ -85,7 +88,11 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_004",
-    "display_order": 4
+    "display_order": 4,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:08:21.517Z"
   },
   {
     "map_label_name": "湊湊火鍋•茶憩 大巨蛋店",
