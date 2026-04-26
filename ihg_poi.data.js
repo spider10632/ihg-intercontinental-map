@@ -583,10 +583,13 @@ window.WANHUA_POI_DATA = [
     "name_zh": "地中海餐酒館 ABV Bar & Kitchen 台北光復店",
     "name_en": "",
     "name_ja": "",
-    "primary_category": "商店",
-    "subcategory": "其他",
-    "business_type": "shop",
-    "meal_tags": [],
+    "primary_category": "餐飲",
+    "subcategory": "午餐|晚餐",
+    "business_type": "restaurant",
+    "meal_tags": [
+      "午餐",
+      "晚餐"
+    ],
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0401435,121.55568079999999",
     "address_zh": "106臺北市大安區光復南路260巷39號",
     "phone": "02 8771 8114",
@@ -598,7 +601,11 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_023",
-    "display_order": 23
+    "display_order": 23,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:11:18.974Z"
   },
   {
     "map_label_name": "臺灣銀行松山分行",
