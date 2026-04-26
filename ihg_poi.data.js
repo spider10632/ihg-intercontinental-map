@@ -338,7 +338,7 @@ window.WANHUA_POI_DATA = [
     "name_en": "",
     "name_ja": "",
     "primary_category": "餐飲",
-    "subcategory": "晚餐",
+    "subcategory": "午餐|晚餐",
     "business_type": "restaurant",
     "meal_tags": [
       "午餐",
@@ -355,7 +355,11 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_014",
-    "display_order": 14
+    "display_order": 14,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:10:19.592Z"
   },
   {
     "map_label_name": "嵩 sung 台北大安",
