@@ -497,7 +497,7 @@ window.WANHUA_POI_DATA = [
     "name_en": "",
     "name_ja": "",
     "primary_category": "餐飲",
-    "subcategory": "午餐",
+    "subcategory": "午餐|晚餐",
     "business_type": "restaurant",
     "meal_tags": [
       "午餐",
@@ -514,7 +514,11 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_020",
-    "display_order": 20
+    "display_order": 20,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:10:56.904Z"
   },
   {
     "map_label_name": "宣牛溫體牛肉火鍋(光復店)",
