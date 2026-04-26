@@ -283,7 +283,7 @@
     "name_en": "",
     "name_ja": "",
     "primary_category": "商店",
-    "subcategory": "其他",
+    "subcategory": "百貨",
     "business_type": "shop",
     "meal_tags": [],
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.044545,121.5614574",
@@ -297,7 +297,11 @@
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_012",
-    "display_order": 12
+    "display_order": 12,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:09:56.233Z"
   },
   {
     "map_label_name": "BURGER OUT",
