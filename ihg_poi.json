@@ -862,7 +862,7 @@
     "name_en": "",
     "name_ja": "",
     "primary_category": "商店",
-    "subcategory": "其他",
+    "subcategory": "百貨",
     "business_type": "shop",
     "meal_tags": [],
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0408461,121.5653962",
@@ -876,7 +876,11 @@
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_033",
-    "display_order": 33
+    "display_order": 33,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:12:23.719Z"
   },
   {
     "map_label_name": "Taipei 101 Rainbow Walk",
