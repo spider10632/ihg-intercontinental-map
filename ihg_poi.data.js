@@ -850,7 +850,11 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_032",
-    "display_order": 32
+    "display_order": 32,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:12:17.431Z"
   },
   {
     "map_label_name": "統一時代百貨 台北店",
