@@ -366,10 +366,13 @@ window.WANHUA_POI_DATA = [
     "name_zh": "嵩 sung 台北大安",
     "name_en": "",
     "name_ja": "",
-    "primary_category": "景點",
-    "subcategory": "其他",
-    "business_type": "attraction",
-    "meal_tags": [],
+    "primary_category": "餐飲",
+    "subcategory": "午餐|晚餐",
+    "business_type": "restaurant",
+    "meal_tags": [
+      "午餐",
+      "晚餐"
+    ],
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0430657,121.55575689999999",
     "address_zh": "106臺北市大安區延吉街131巷35號",
     "phone": "02 8772 0358",
@@ -381,7 +384,11 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_015",
-    "display_order": 15
+    "display_order": 15,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-26T22:10:29.742Z"
   },
   {
     "map_label_name": "HANNA Pasta Café パスタ カフェ",
