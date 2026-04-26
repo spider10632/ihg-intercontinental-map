@@ -931,7 +931,7 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:12:35.040Z"
+    "updated_at": "2026-04-26T22:15:13.955Z"
   },
   {
     "map_label_name": "國家鐵道博物館",
