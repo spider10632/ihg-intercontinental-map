@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IHG 點位後台</title>
-    <link rel="stylesheet" href="./admin.css?v=20260426-3" />
+    <link rel="stylesheet" href="./admin.css?v=20260428-8" />
   </head>
   <body>
     <main class="wrap">
@@ -92,10 +92,30 @@
             營業時間（可選）
             <input id="opening-hours" name="opening_hours" placeholder="例如：11:00-21:00 或 週一至週日 11:00-21:00" />
           </label>
-          <label class="full">
-            備註（基本介紹，可選）
-            <textarea id="notes" name="notes" rows="3"></textarea>
-          </label>
+          <div class="full">
+            <span class="field-title">基本介紹（手寫三語，可選）</span>
+            <div class="notes-editor js-notes-editor" data-default-lang="zh">
+              <div class="notes-editor__tabs">
+                <button type="button" class="notes-tab js-notes-tab" data-lang="zh">中文</button>
+                <button type="button" class="notes-tab js-notes-tab" data-lang="en">English</button>
+                <button type="button" class="notes-tab js-notes-tab" data-lang="ja">日本語</button>
+              </div>
+              <div class="notes-editor__panes">
+                <label class="notes-pane js-notes-pane" data-lang="zh">
+                  中文介紹
+                  <textarea id="notes-zh" name="notes_zh" rows="3"></textarea>
+                </label>
+                <label class="notes-pane js-notes-pane" data-lang="en">
+                  English Intro
+                  <textarea id="notes-en" name="notes_en" rows="3"></textarea>
+                </label>
+                <label class="notes-pane js-notes-pane" data-lang="ja">
+                  日本語紹介
+                  <textarea id="notes-ja" name="notes_ja" rows="3"></textarea>
+                </label>
+              </div>
+            </div>
+          </div>
           <div class="full actions">
             <button type="submit">新增點位</button>
           </div>
@@ -107,7 +127,7 @@
           <h2>目前點位</h2>
           <p id="count-text">讀取中...</p>
         </div>
-        <p>每筆資料分兩排編輯：上排名稱/地址/電話/主分類/子分類/營業時間；下排座標/Google Maps 連結/備註，再按「修改」即可。</p>
+        <p>每筆資料分兩排編輯：上排名稱/地址/電話/主分類/子分類/營業時間；下排座標/Google Maps 連結/三語介紹，再按「修改」即可。</p>
         <div class="table-wrap">
           <table>
             <thead>
@@ -130,6 +150,6 @@
     <script>
       window.ADMIN_API_ORIGIN = "https://ihg-admin-api.spider10632.workers.dev";
     </script>
-    <script src="./admin.js?v=20260428-5"></script>
+    <script src="./admin.js?v=20260428-7"></script>
   </body>
 </html>

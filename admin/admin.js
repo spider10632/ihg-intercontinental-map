@@ -57,7 +57,9 @@ const dom = {
   category: document.querySelector("#category"),
   phone: document.querySelector("#phone"),
   openingHours: document.querySelector("#opening-hours"),
-  notes: document.querySelector("#notes"),
+  notesZh: document.querySelector("#notes-zh"),
+  notesEn: document.querySelector("#notes-en"),
+  notesJa: document.querySelector("#notes-ja"),
   reloadBtn: document.querySelector("#reload-btn"),
   rebuildBtn: document.querySelector("#rebuild-btn"),
   syncWeeklyBtn: document.querySelector("#sync-weekly-btn"),
@@ -412,6 +414,71 @@ function initAddFormCategorySelects() {
   setSelectOptions(dom.subcategory, options, selectedSubcategory, placeholder);
 }
 
+const NOTE_LANGS = [
+  { code: "zh", label: "中文介紹" },
+  { code: "en", label: "English Intro" },
+  { code: "ja", label: "日本語紹介" },
+];
+
+function buildNotesEditorHtml(rowId, notesValues = {}) {
+  const safeId = htmlEscape(rowId || "add");
+  const tabs = NOTE_LANGS
+    .map(
+      (lang) =>
+        `<button type="button" class="notes-tab js-notes-tab" data-lang="${lang.code}" data-row-id="${safeId}">${
+          lang.code === "zh" ? "中文" : lang.code === "en" ? "English" : "日本語"
+        }</button>`
+    )
+    .join("");
+
+  const panes = NOTE_LANGS
+    .map((lang) => {
+      const value = normalizeText(notesValues[lang.code] || "");
+      return `
+        <label class="notes-pane js-notes-pane" data-lang="${lang.code}">
+          ${htmlEscape(lang.label)}
+          <textarea class="inline-textarea js-notes-${lang.code}" data-id="${safeId}" rows="3">${htmlEscape(value)}</textarea>
+        </label>
+      `;
+    })
+    .join("");
+
+  return `
+    <div class="notes-editor js-notes-editor" data-default-lang="zh">
+      <div class="notes-editor__tabs">${tabs}</div>
+      <div class="notes-editor__panes">${panes}</div>
+    </div>
+  `;
+}
+
+function setNotesEditorLanguage(editorEl, lang) {
+  if (!(editorEl instanceof HTMLElement)) return;
+  const targetLang = normalizeText(lang) || "zh";
+  editorEl.querySelectorAll(".js-notes-tab").forEach((tabEl) => {
+    if (!(tabEl instanceof HTMLElement)) return;
+    const tabLang = normalizeText(tabEl.getAttribute("data-lang"));
+    tabEl.classList.toggle("is-active", tabLang === targetLang);
+  });
+  editorEl.querySelectorAll(".js-notes-pane").forEach((paneEl) => {
+    if (!(paneEl instanceof HTMLElement)) return;
+    const paneLang = normalizeText(paneEl.getAttribute("data-lang"));
+    paneEl.classList.toggle("is-active", paneLang === targetLang);
+  });
+  editorEl.dataset.activeLang = targetLang;
+}
+
+function initNotesEditors(rootEl = document) {
+  if (!(rootEl instanceof Element || rootEl instanceof Document)) return;
+  rootEl.querySelectorAll(".js-notes-editor").forEach((editorEl) => {
+    if (!(editorEl instanceof HTMLElement)) return;
+    const preferred =
+      normalizeText(editorEl.dataset.activeLang) ||
+      normalizeText(editorEl.dataset.defaultLang) ||
+      "zh";
+    setNotesEditorLanguage(editorEl, preferred);
+  });
+}
+
 function cleanSystemNotes(value) {
   const raw = normalizeText(value);
   if (!raw) return "";
@@ -441,6 +508,10 @@ function friendlyError(error) {
 }
 
 function buildPayload() {
+  const notesZh = dom.notesZh ? dom.notesZh.value.trim() : "";
+  const notesEn = dom.notesEn ? dom.notesEn.value.trim() : "";
+  const notesJa = dom.notesJa ? dom.notesJa.value.trim() : "";
+
   return {
     list_name: dom.listName.value.trim(),
     name: dom.name.value.trim(),
@@ -453,7 +524,10 @@ function buildPayload() {
     category: dom.category.value.trim(),
     phone: dom.phone.value.trim(),
     opening_hours: dom.openingHours.value.trim(),
-    notes: dom.notes.value.trim(),
+    notes: notesZh,
+    notes_zh: notesZh,
+    notes_en: notesEn,
+    notes_ja: notesJa,
   };
 }
 
@@ -483,7 +557,9 @@ function renderRows(items) {
       const primaryCategory = row.primary_category || "";
       const subcategory = row.subcategory || "";
       const openingHours = row.opening_hours || "";
-      const notes = cleanSystemNotes(row.notes || "");
+      const notesZh = cleanSystemNotes(row.notes_zh || row.notes || "");
+      const notesEn = normalizeText(row.notes_en || "");
+      const notesJa = normalizeText(row.notes_ja || "");
       const updatedAt = row.updated_at || "";
       const mapLink = mapsUrl
         ? `<a href="${htmlEscape(mapsUrl)}" target="_blank" rel="noreferrer">Open</a>`
@@ -539,7 +615,7 @@ function renderRows(items) {
               </label>
               <label class="editor-field editor-field--notes">
                 <span class="editor-label">Notes</span>
-                <textarea class="inline-textarea js-notes" data-id="${htmlEscape(row.id)}" rows="2">${htmlEscape(notes)}</textarea>
+                ${buildNotesEditorHtml(row.id, { zh: notesZh, en: notesEn, ja: notesJa })}
               </label>
               <div class="editor-meta editor-meta--map">
                 <span class="editor-label">Map</span>
@@ -565,6 +641,7 @@ function renderRows(items) {
   dom.placeBody.querySelectorAll(".js-subcategory").forEach((el) => {
     if (el instanceof HTMLSelectElement) syncSubcategoryDropdown(el);
   });
+  initNotesEditors(dom.placeBody);
 }
 
 async function refreshList() {
@@ -592,6 +669,7 @@ async function onSubmit(event) {
     dom.form.reset();
     dom.listName.value = payload.list_name || DEFAULT_LIST_NAME;
     initAddFormCategorySelects();
+    initNotesEditors(document);
     await refreshList();
   } catch (error) {
     log(`新增失敗：${friendlyError(error)}`);
@@ -672,7 +750,13 @@ async function saveInlineRow(placeId, rowEl, buttonEl, options = {}) {
   const latInput = getRowInput(rowEl, ".js-lat");
   const lngInput = getRowInput(rowEl, ".js-lng");
   const mapsUrlInput = getRowInput(rowEl, ".js-maps-url");
-  const notesInput = getRowInput(rowEl, ".js-notes");
+  const notesZhInput = getRowInput(rowEl, ".js-notes-zh");
+  const notesEnInput = getRowInput(rowEl, ".js-notes-en");
+  const notesJaInput = getRowInput(rowEl, ".js-notes-ja");
+
+  const notesZh = notesZhInput ? notesZhInput.value.trim() : "";
+  const notesEn = notesEnInput ? notesEnInput.value.trim() : "";
+  const notesJa = notesJaInput ? notesJaInput.value.trim() : "";
 
   const payload = {
     list_name: dom.listName.value.trim() || DEFAULT_LIST_NAME,
@@ -689,7 +773,10 @@ async function saveInlineRow(placeId, rowEl, buttonEl, options = {}) {
     lat: latInput ? latInput.value.trim() : "",
     lng: lngInput ? lngInput.value.trim() : "",
     maps_url: mapsUrlInput ? mapsUrlInput.value.trim() : "",
-    notes: notesInput ? notesInput.value.trim() : "",
+    notes: notesZh,
+    notes_zh: notesZh,
+    notes_en: notesEn,
+    notes_ja: notesJa,
   };
 
   const skipRefresh = options.skipRefresh === true;
@@ -703,7 +790,7 @@ async function saveInlineRow(placeId, rowEl, buttonEl, options = {}) {
       body: JSON.stringify(payload),
     });
     if (!silentLog) {
-      log(`點位 ${placeId} 已修改（含主分類/子分類、座標、Google Maps 連結、備註、營業時間）`, data);
+      log(`點位 ${placeId} 已修改（含主分類/子分類、座標、Google Maps 連結、三語介紹、營業時間）`, data);
     }
     if (!skipRefresh) {
       await refreshList();
@@ -1169,6 +1256,7 @@ runtimeGoogleMapsApiKey = readStoredApiKey() || CONFIG_GOOGLE_MAPS_API_KEY;
 syncApiKeyUi();
 syncApiKeyStatusFromServer();
 initAddFormCategorySelects();
+initNotesEditors(document);
 
 dom.form.addEventListener("submit", onSubmit);
 dom.reloadBtn.addEventListener("click", () => {
@@ -1219,6 +1307,14 @@ if (dom.primaryCategory instanceof HTMLSelectElement && dom.subcategory instance
 document.addEventListener("click", (event) => {
   const target = event.target;
   if (!(target instanceof Element)) return;
+  const noteTab = target.closest(".js-notes-tab");
+  if (noteTab instanceof HTMLElement) {
+    event.preventDefault();
+    const editorEl = noteTab.closest(".js-notes-editor");
+    const lang = normalizeText(noteTab.getAttribute("data-lang")) || "zh";
+    setNotesEditorLanguage(editorEl, lang);
+    return;
+  }
   if (target.closest(".check-dropdown")) return;
   closeAllSubcategoryDropdowns();
 });

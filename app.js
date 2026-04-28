@@ -250,7 +250,10 @@ function normalizeRuntimePlaces(inputData, excludedId = "") {
       phone: normalizeText(place.phone),
       opening_hours: normalizeText(place.opening_hours),
       near_mrt: normalizeText(place.near_mrt),
-      notes: normalizeText(place.notes),
+      notes_zh: normalizeText(place.notes_zh) || normalizeText(place.notes),
+      notes_en: normalizeText(place.notes_en),
+      notes_ja: normalizeText(place.notes_ja),
+      notes: normalizeText(place.notes_zh) || normalizeText(place.notes),
       source_status: normalizeText(place.source_status) || "map_only",
       is_active: place.is_active !== false,
       walk_10min_from_hotel: place.walk_10min_from_hotel === true,
@@ -573,7 +576,10 @@ function normalizeApiPlaceItem(item, index) {
     phone: normalizeText(item?.phone),
     opening_hours: normalizeText(item?.opening_hours),
     near_mrt: normalizeText(item?.near_mrt),
-    notes: normalizeText(item?.notes),
+    notes_zh: normalizeText(item?.notes_zh) || normalizeText(item?.notes),
+    notes_en: normalizeText(item?.notes_en),
+    notes_ja: normalizeText(item?.notes_ja),
+    notes: normalizeText(item?.notes_zh) || normalizeText(item?.notes),
     source_status: normalizeText(item?.source_status) || "map_only",
     is_active: item?.is_active !== false,
     walk_10min_from_hotel: item?.walk_10min_from_hotel === true,
@@ -2285,7 +2291,7 @@ function applyFilters(place) {
     place.address_zh,
     place.phone,
     isWithin10MinWalk(place) ? WALK_10MIN_SUBCATEGORY : "",
-    normalizeText(place.notes),
+    getAllNotesForSearch(place),
     place.near_mrt,
     getMealTags(place).join(" "),
   ]
@@ -2701,14 +2707,31 @@ function buildTourLeadJa(place, mrt) {
   return `${mrt} 周辺にあり、徒歩で回りやすい行程に組み込みやすいスポットです。`;
 }
 
+function getLocalizedNote(place, lang = state.lang) {
+  const zh = normalizeText(place?.notes_zh) || normalizeText(place?.notes);
+  const en = normalizeText(place?.notes_en);
+  const ja = normalizeText(place?.notes_ja);
+
+  if (lang === "en") return en || zh || ja;
+  if (lang === "ja") return ja || zh || en;
+  return zh || en || ja;
+}
+
+function getAllNotesForSearch(place) {
+  return [
+    normalizeText(place?.notes_zh),
+    normalizeText(place?.notes_en),
+    normalizeText(place?.notes_ja),
+    normalizeText(place?.notes),
+  ]
+    .filter(Boolean)
+    .join(" ");
+}
+
 function getBasicIntro(place) {
-  const note = normalizeText(place.notes);
+  const note = stripPlusCodeForDisplay(getLocalizedNote(place, state.lang));
   if (!note || isMissingValue(note)) return "";
   if (isGenericSourceNote(note)) return "";
-  if (state.lang === "zh") return note;
-  const translated = getCachedNoteTranslation(note, state.lang);
-  if (translated) return translated;
-  queueNoteTranslation(note, state.lang);
   return note;
 }
 
@@ -2732,7 +2755,7 @@ function stripPlusCodeForDisplay(input) {
 
 function isSuppressedPlace(place) {
   if (MANUAL_SUPPRESSED_PLACE_IDS.has(place.id)) return true;
-  const notes = normalizeText(place.notes);
+  const notes = getAllNotesForSearch(place);
   const openingHours = normalizeText(place.opening_hours);
   return (
     place.source_status === "closed" ||
@@ -2789,7 +2812,7 @@ function resolvePlusCodeQuery(place) {
   const candidates = [
     normalizeText(place.plus_code),
     normalizeText(place.address_zh),
-    normalizeText(place.notes),
+    getAllNotesForSearch(place),
     extractQueryFromGoogleMapsUrl(place.google_maps_url),
   ].filter(Boolean);
 
