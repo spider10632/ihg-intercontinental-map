@@ -2097,7 +2097,8 @@ function renderSpotlight(selected) {
   dom.selectedHours.hidden = false;
   dom.selectedHours.textContent = `${text.hours}${openingHoursDisplay}`;
 
-  dom.selectedNotes.textContent = displayIntro || text.noNotes;
+  dom.selectedNotes.textContent = displayIntro;
+  dom.selectedNotes.hidden = !displayIntro;
 
   dom.selectedOpen.href = buildSearchUrl(focus);
   dom.selectedOpen.textContent = isHotel ? text.openHotel : text.openCurrent;
@@ -2457,21 +2458,10 @@ function buildTourLeadJa(place, mrt) {
 }
 
 function getBasicIntro(place) {
-  const mrt = trMrt(place.near_mrt || tt("mrtPending"));
   const note = normalizeText(place.notes);
-  if (note && !isMissingValue(note) && !isGenericSourceNote(note)) {
-    return note;
-  }
-
-  if (state.lang === "en") {
-    return buildTourLeadEn(place, mrt);
-  }
-
-  if (state.lang === "ja") {
-    return buildTourLeadJa(place, mrt);
-  }
-
-  return buildTourLeadZh(place, mrt);
+  if (!note || isMissingValue(note)) return "";
+  if (isGenericSourceNote(note)) return "";
+  return note;
 }
 
 function isGenericSourceNote(note) {
