@@ -35,13 +35,17 @@ window.WANHUA_POI_DATA = [
     "phone": "02 2722 8811",
     "opening_hours": "星期一: 24 小時營業；星期二: 24 小時營業；星期三: 24 小時營業；星期四: 24 小時營業；星期五: 24 小時營業；星期六: 24 小時營業；星期日: 24 小時營業",
     "near_mrt": "國父紀念館站",
-    "notes": "來源：Google Maps 大巨蛋清單",
+    "notes": "臺北大巨蛋 (Taipei Dome) 是台灣唯一的巨蛋級多功能室內場館，於 2023 年底正式啟用。它提供不受天氣影響的觀賽與活動空間，包含棒球賽、演唱會等多樣化功能。",
     "source_status": "map_only",
     "source_url": "https://www.google.com/maps/search/?api=1&query=25.0424367,121.55950659999999",
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_002",
-    "display_order": 2
+    "display_order": 2,
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-04-28T00:31:09.661Z"
   },
   {
     "map_label_name": "PRESERVE 遠東GARDEN CITY 大巨蛋店",
