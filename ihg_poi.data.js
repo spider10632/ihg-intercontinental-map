@@ -94,7 +94,7 @@ window.WANHUA_POI_DATA = [
     "phone": "02 2766 9905",
     "opening_hours": "星期一: 11:00 – 22:00；星期二: 11:00 – 22:00；星期三: 11:00 – 22:00；星期四: 11:00 – 22:00；星期五: 11:00 – 00:00；星期六: 11:00 – 00:00；星期日: 11:00 – 00:00",
     "near_mrt": "國父紀念館站",
-    "notes": "來源：Google Maps 大巨蛋清單",
+    "notes": "For a stylish Korean dining experience in Taipei, 紫木槿韓餐酒館 is a great choice.\nIt combines classic Korean dishes with a modern bistro vibe and creative cocktails, perfect for dinner and drinks.\nThe lively, trendy atmosphere makes it ideal for dates or small group gatherings",
     "source_status": "map_only",
     "source_url": "https://www.google.com/maps/search/?api=1&query=25.0416275,121.55952979999999",
     "is_active": true,
@@ -104,7 +104,7 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:08:21.517Z"
+    "updated_at": "2026-04-28T12:39:42.538Z"
   },
   {
     "map_label_name": "湊湊火鍋•茶憩 大巨蛋店",
