@@ -45,7 +45,7 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-28T00:31:09.661Z"
+    "updated_at": "2026-04-28T00:31:45.817Z"
   },
   {
     "map_label_name": "PRESERVE 遠東GARDEN CITY 大巨蛋店",
