@@ -27,6 +27,10 @@ const WALKING_THROTTLE_MS = 180;
 const OPENING_HOURS_CACHE_KEY = "ihg_google_opening_hours_cache_v1";
 const OPENING_HOURS_CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 7;
 const OPENING_HOURS_THROTTLE_MS = 180;
+const NOTE_TRANSLATION_CACHE_KEY = "ihg_note_translation_cache_v1";
+const NOTE_TRANSLATION_CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 30;
+const NOTE_TRANSLATION_THROTTLE_MS = 180;
+const NOTE_TRANSLATE_ENDPOINT = "https://translate.googleapis.com/translate_a/single";
 const FAVORITES_STORAGE_KEY = "ihg_map_favorites_v1";
 const WEATHER_ENDPOINT =
   "https://api.open-meteo.com/v1/forecast?latitude=25.0424367&longitude=121.5595066&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTaipei&forecast_days=1";
@@ -344,6 +348,10 @@ const state = {
   conciergeRandomPickByPrimary: {},
   walkingCache: readWalkingCache(),
   openingHoursCache: readOpeningHoursCache(),
+  noteTranslationCache: readNoteTranslationCache(),
+  noteTranslationQueue: [],
+  noteTranslationInFlight: new Set(),
+  noteTranslationWorkerRunning: false,
   walkingRefreshRunning: false,
   openingHoursRefreshRunning: false,
   placesRestDisabled: false,
@@ -475,9 +483,11 @@ async function init() {
     state.favorites = readFavorites();
     state.walkingCache = readWalkingCache();
     state.openingHoursCache = readOpeningHoursCache();
+    state.noteTranslationCache = readNoteTranslationCache();
     state.conciergeRandomPickByPrimary = {};
   }
   sanitizeOpeningHoursCache();
+  sanitizeNoteTranslationCache();
   applyStaticText();
   initializeFilters();
   attachEvents();
@@ -699,6 +709,152 @@ function sanitizeOpeningHoursCache() {
     state.openingHoursCache = {};
     saveOpeningHoursCache();
   }
+}
+
+function readNoteTranslationCache() {
+  try {
+    const raw = localStorage.getItem(NOTE_TRANSLATION_CACHE_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") return {};
+
+    const output = {};
+    Object.entries(parsed).forEach(([key, record]) => {
+      if (!record || typeof record !== "object") return;
+      const text = normalizeText(record.text);
+      const updatedAt = Number(record.updatedAt);
+      if (!text) return;
+      if (!Number.isFinite(updatedAt) || updatedAt <= 0) return;
+      if (Date.now() - updatedAt > NOTE_TRANSLATION_CACHE_TTL_MS) return;
+      output[key] = { text, updatedAt };
+    });
+    return output;
+  } catch (_e) {
+    return {};
+  }
+}
+
+function saveNoteTranslationCache() {
+  try {
+    localStorage.setItem(NOTE_TRANSLATION_CACHE_KEY, JSON.stringify(state.noteTranslationCache));
+  } catch (_e) {
+    // ignore
+  }
+}
+
+function sanitizeNoteTranslationCache() {
+  const entries = Object.entries(state.noteTranslationCache || {}).filter(
+    ([, record]) => record && typeof record === "object" && Number.isFinite(Number(record.updatedAt))
+  );
+  if (!entries.length) return;
+  const freshEntries = entries.filter(([, record]) => Date.now() - Number(record.updatedAt) <= NOTE_TRANSLATION_CACHE_TTL_MS);
+  if (freshEntries.length === entries.length) return;
+  state.noteTranslationCache = Object.fromEntries(freshEntries);
+  saveNoteTranslationCache();
+}
+
+function buildNoteTranslationCacheKey(note, lang) {
+  return `${lang}::${note}`;
+}
+
+function getCachedNoteTranslation(note, lang) {
+  const key = buildNoteTranslationCacheKey(note, lang);
+  const record = state.noteTranslationCache[key];
+  if (!record || typeof record !== "object") return "";
+  const text = normalizeText(record.text);
+  const updatedAt = Number(record.updatedAt);
+  if (!text || !Number.isFinite(updatedAt) || updatedAt <= 0) return "";
+  if (Date.now() - updatedAt > NOTE_TRANSLATION_CACHE_TTL_MS) return "";
+  return text;
+}
+
+function hasCjkCharacters(value) {
+  return /[\u3400-\u9fff]/.test(normalizeText(value));
+}
+
+function hasJapaneseKana(value) {
+  return /[\u3040-\u30ff]/.test(normalizeText(value));
+}
+
+function shouldTranslateNote(note, lang) {
+  if (lang === "zh") return false;
+  const text = normalizeText(note);
+  if (!text) return false;
+  if (encodeURIComponent(text).length > 1500) return false;
+  if (lang === "en" && !hasCjkCharacters(text)) return false;
+  if (lang === "ja" && hasJapaneseKana(text) && !hasCjkCharacters(text)) return false;
+  return true;
+}
+
+function normalizeTranslatedNoteText(value) {
+  return normalizeText(value)
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .replace(/\s{2,}/g, " ");
+}
+
+function queueNoteTranslation(note, lang) {
+  if (!shouldTranslateNote(note, lang)) return;
+  const key = buildNoteTranslationCacheKey(note, lang);
+  if (getCachedNoteTranslation(note, lang)) return;
+  if (state.noteTranslationInFlight.has(key)) return;
+  state.noteTranslationInFlight.add(key);
+  state.noteTranslationQueue.push({ key, note, lang });
+  void runNoteTranslationWorker();
+}
+
+async function runNoteTranslationWorker() {
+  if (state.noteTranslationWorkerRunning) return;
+  state.noteTranslationWorkerRunning = true;
+  try {
+    while (state.noteTranslationQueue.length > 0) {
+      const task = state.noteTranslationQueue.shift();
+      if (!task) continue;
+      try {
+        const translated = await requestNoteTranslation(task.note, task.lang);
+        if (translated) {
+          state.noteTranslationCache[task.key] = {
+            text: translated,
+            updatedAt: Date.now(),
+          };
+          saveNoteTranslationCache();
+          render();
+        }
+      } catch (_error) {
+        // keep original note if translation fails
+      } finally {
+        state.noteTranslationInFlight.delete(task.key);
+      }
+      await sleep(NOTE_TRANSLATION_THROTTLE_MS);
+    }
+  } finally {
+    state.noteTranslationWorkerRunning = false;
+  }
+}
+
+async function requestNoteTranslation(note, lang) {
+  const sourceText = normalizeText(note);
+  if (!sourceText) return "";
+  const targetLang = lang === "ja" ? "ja" : "en";
+  const url = new URL(NOTE_TRANSLATE_ENDPOINT);
+  url.searchParams.set("client", "gtx");
+  url.searchParams.set("sl", "auto");
+  url.searchParams.set("tl", targetLang);
+  url.searchParams.set("dt", "t");
+  url.searchParams.set("q", sourceText);
+
+  const response = await fetch(url.toString(), { cache: "no-store" });
+  if (!response.ok) throw new Error(`translate http ${response.status}`);
+  const payload = await response.json();
+  if (!Array.isArray(payload) || !Array.isArray(payload[0])) return "";
+
+  const translated = payload[0]
+    .map((segment) => (Array.isArray(segment) ? normalizeText(segment[0]) : ""))
+    .filter(Boolean)
+    .join(" ");
+
+  const normalized = normalizeTranslatedNoteText(translated);
+  if (!normalized || normalized === sourceText) return "";
+  return normalized;
 }
 
 function tt(key) {
@@ -2041,7 +2197,7 @@ function applyFilters(place) {
     place.address_zh,
     place.phone,
     isWithin10MinWalk(place) ? WALK_10MIN_SUBCATEGORY : "",
-    getBasicIntro(place),
+    normalizeText(place.notes),
     place.near_mrt,
     getMealTags(place).join(" "),
   ]
@@ -2461,6 +2617,10 @@ function getBasicIntro(place) {
   const note = normalizeText(place.notes);
   if (!note || isMissingValue(note)) return "";
   if (isGenericSourceNote(note)) return "";
+  if (state.lang === "zh") return note;
+  const translated = getCachedNoteTranslation(note, state.lang);
+  if (translated) return translated;
+  queueNoteTranslation(note, state.lang);
   return note;
 }
 
