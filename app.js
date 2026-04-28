@@ -2458,23 +2458,31 @@ function buildTourLeadJa(place, mrt) {
 
 function getBasicIntro(place) {
   const mrt = trMrt(place.near_mrt || tt("mrtPending"));
-  const hours = getResolvedOpeningHours(place);
+  const note = normalizeText(place.notes);
+  if (note && !isMissingValue(note) && !isGenericSourceNote(note)) {
+    return note;
+  }
 
   if (state.lang === "en") {
-    const lead = buildTourLeadEn(place, mrt);
-    const t = hours ? ` Best time: ${hours}.` : "";
-    return `${lead}${t}`.trim();
+    return buildTourLeadEn(place, mrt);
   }
 
   if (state.lang === "ja") {
-    const lead = buildTourLeadJa(place, mrt);
-    const t = hours ? ` おすすめ時間：${hours}。` : "";
-    return `${lead}${t}`.trim();
+    return buildTourLeadJa(place, mrt);
   }
 
-  const lead = buildTourLeadZh(place, mrt);
-  const t = hours ? ` 建議時段：${hours}。` : "";
-  return `${lead}${t}`.trim();
+  return buildTourLeadZh(place, mrt);
+}
+
+function isGenericSourceNote(note) {
+  const normalized = normalizeText(note).toLowerCase();
+  if (!normalized) return true;
+  return (
+    normalized.includes("來源：google maps") ||
+    normalized.includes("來源:google maps") ||
+    normalized.includes("google maps 大巨蛋清單") ||
+    normalized.includes("source: google maps")
+  );
 }
 
 function stripPlusCodeForDisplay(input) {
