@@ -75,7 +75,7 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-28T00:46:51.394Z"
+    "updated_at": "2026-04-28T00:48:10.520Z"
   },
   {
     "map_label_name": "紫木槿韓餐酒館(遠東Garden City 大巨蛋店)",
