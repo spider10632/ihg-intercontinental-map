@@ -65,7 +65,7 @@ window.WANHUA_POI_DATA = [
     "phone": "02 2761 3365",
     "opening_hours": "星期一: 09:00 – 20:00；星期二: 09:00 – 20:00；星期三: 09:00 – 20:00；星期四: 09:00 – 20:00；星期五: 09:00 – 20:00；星期六: 09:00 – 20:15；星期日: 09:00 – 20:15",
     "near_mrt": "國父紀念館站",
-    "notes": "來源：Google Maps 大巨蛋清單",
+    "notes": "以「超級食物」酪梨為核心，必點招牌「無澱粉酪梨漢堡」。用整顆酪梨完美取代漢堡麵包，清爽健康且極具視覺張力，搭配每日現烤麵包，是早午餐的絕佳選擇。",
     "source_status": "map_only",
     "source_url": "https://www.google.com/maps/search/?api=1&query=25.0430378,121.5596193",
     "is_active": true,
@@ -75,7 +75,7 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:14:19.813Z"
+    "updated_at": "2026-04-28T00:46:51.394Z"
   },
   {
     "map_label_name": "紫木槿韓餐酒館(遠東Garden City 大巨蛋店)",
