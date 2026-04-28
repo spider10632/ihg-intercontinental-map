@@ -2023,7 +2023,7 @@ function applyFilters(place) {
     const normalSubcategories = [...state.applied.subcategory].filter((value) => value !== WALK_10MIN_SUBCATEGORY);
     const placeSubcategories = listSubcategoryValues(place.subcategory);
     if (requiresWalk10 && !isWithin10MinWalk(place)) return false;
-    if (normalSubcategories.length && !normalSubcategories.some((value) => placeSubcategories.includes(value))) return false;
+    if (normalSubcategories.length && !normalSubcategories.every((value) => placeSubcategories.includes(value))) return false;
   }
   const useMealFilter = state.applied.primary.has("餐飲");
   if (useMealFilter && state.applied.meal.size && !getMealTags(place).some((tag) => state.applied.meal.has(tag))) return false;
