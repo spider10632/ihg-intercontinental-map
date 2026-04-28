@@ -30,6 +30,7 @@ const OPENING_HOURS_THROTTLE_MS = 180;
 const NOTE_TRANSLATION_CACHE_KEY = "ihg_note_translation_cache_v1";
 const NOTE_TRANSLATION_CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 30;
 const NOTE_TRANSLATION_THROTTLE_MS = 180;
+const NOTE_TRANSLATE_WORKER_ENDPOINT = "https://ihg-admin-api.spider10632.workers.dev/api/translate-note";
 const NOTE_TRANSLATE_ENDPOINT = "https://translate.googleapis.com/translate_a/single";
 const NOTE_TRANSLATION_GLOSSARY = {
   en: [
@@ -894,6 +895,31 @@ async function requestNoteTranslation(note, lang) {
   const sourceText = normalizeText(note);
   if (!sourceText) return "";
   const targetLang = lang === "ja" ? "ja" : "en";
+  const translatedByWorker = await requestNoteTranslationByWorker(sourceText, targetLang);
+  if (translatedByWorker) return translatedByWorker;
+
+  return requestNoteTranslationByGoogle(sourceText, targetLang);
+}
+
+async function requestNoteTranslationByWorker(sourceText, targetLang) {
+  const response = await fetch(NOTE_TRANSLATE_WORKER_ENDPOINT, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      text: sourceText,
+      target_lang: targetLang,
+    }),
+    cache: "no-store",
+  });
+  if (!response.ok) return "";
+
+  const payload = await response.json();
+  const translated = normalizeTranslatedNoteText(payload?.text);
+  if (!translated || translated === sourceText) return "";
+  return translated;
+}
+
+async function requestNoteTranslationByGoogle(sourceText, targetLang) {
   const withPlaceholders = injectNoteGlossaryPlaceholders(sourceText, targetLang);
 
   const url = new URL(NOTE_TRANSLATE_ENDPOINT);
