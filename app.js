@@ -31,6 +31,32 @@ const NOTE_TRANSLATION_CACHE_KEY = "ihg_note_translation_cache_v1";
 const NOTE_TRANSLATION_CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 30;
 const NOTE_TRANSLATION_THROTTLE_MS = 180;
 const NOTE_TRANSLATE_ENDPOINT = "https://translate.googleapis.com/translate_a/single";
+const NOTE_TRANSLATION_GLOSSARY = {
+  en: [
+    ["InterContinental 台北洲際酒店", "InterContinental Taipei"],
+    ["台北洲際酒店", "InterContinental Taipei"],
+    ["臺北大巨蛋", "Taipei Dome"],
+    ["台北大巨蛋", "Taipei Dome"],
+    ["大巨蛋", "Taipei Dome"],
+    ["國父紀念館站", "Sun Yat-sen Memorial Hall Station"],
+    ["市政府站", "Taipei City Hall Station"],
+    ["松山文創園區", "Songshan Cultural and Creative Park"],
+    ["誠品生活松菸", "Eslite Spectrum Songyan"],
+    ["信義區", "Xinyi District"],
+  ],
+  ja: [
+    ["InterContinental 台北洲際酒店", "インターコンチネンタル台北"],
+    ["台北洲際酒店", "インターコンチネンタル台北"],
+    ["臺北大巨蛋", "台北ドーム"],
+    ["台北大巨蛋", "台北ドーム"],
+    ["大巨蛋", "台北ドーム"],
+    ["國父紀念館站", "國父紀念館駅"],
+    ["市政府站", "市政府駅"],
+    ["松山文創園區", "松山文創園区"],
+    ["誠品生活松菸", "誠品生活松菸"],
+    ["信義區", "信義区"],
+  ],
+};
 const FAVORITES_STORAGE_KEY = "ihg_map_favorites_v1";
 const WEATHER_ENDPOINT =
   "https://api.open-meteo.com/v1/forecast?latitude=25.0424367&longitude=121.5595066&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTaipei&forecast_days=1";
@@ -792,6 +818,39 @@ function normalizeTranslatedNoteText(value) {
     .replace(/\s{2,}/g, " ");
 }
 
+function injectNoteGlossaryPlaceholders(note, lang) {
+  const glossary = Array.isArray(NOTE_TRANSLATION_GLOSSARY[lang]) ? NOTE_TRANSLATION_GLOSSARY[lang] : [];
+  if (!glossary.length) return { text: note, placeholders: [] };
+
+  let text = note;
+  const placeholders = [];
+  let index = 0;
+
+  const sortedGlossary = glossary
+    .map(([source, target]) => [normalizeText(source), normalizeText(target)])
+    .filter(([source, target]) => source && target)
+    .sort((a, b) => b[0].length - a[0].length);
+
+  sortedGlossary.forEach(([source, target]) => {
+    if (!text.includes(source)) return;
+    const token = `[[IHGTERM_${lang.toUpperCase()}_${index}]]`;
+    text = text.split(source).join(token);
+    placeholders.push({ token, target });
+    index += 1;
+  });
+
+  return { text, placeholders };
+}
+
+function restoreNoteGlossaryPlaceholders(text, placeholders) {
+  let output = String(text || "");
+  placeholders.forEach(({ token, target }) => {
+    if (!token || !target) return;
+    output = output.split(token).join(target);
+  });
+  return output;
+}
+
 function queueNoteTranslation(note, lang) {
   if (!shouldTranslateNote(note, lang)) return;
   const key = buildNoteTranslationCacheKey(note, lang);
@@ -835,12 +894,14 @@ async function requestNoteTranslation(note, lang) {
   const sourceText = normalizeText(note);
   if (!sourceText) return "";
   const targetLang = lang === "ja" ? "ja" : "en";
+  const withPlaceholders = injectNoteGlossaryPlaceholders(sourceText, targetLang);
+
   const url = new URL(NOTE_TRANSLATE_ENDPOINT);
   url.searchParams.set("client", "gtx");
-  url.searchParams.set("sl", "auto");
+  url.searchParams.set("sl", "zh-TW");
   url.searchParams.set("tl", targetLang);
   url.searchParams.set("dt", "t");
-  url.searchParams.set("q", sourceText);
+  url.searchParams.set("q", withPlaceholders.text);
 
   const response = await fetch(url.toString(), { cache: "no-store" });
   if (!response.ok) throw new Error(`translate http ${response.status}`);
@@ -852,7 +913,8 @@ async function requestNoteTranslation(note, lang) {
     .filter(Boolean)
     .join(" ");
 
-  const normalized = normalizeTranslatedNoteText(translated);
+  const restored = restoreNoteGlossaryPlaceholders(translated, withPlaceholders.placeholders);
+  const normalized = normalizeTranslatedNoteText(restored);
   if (!normalized || normalized === sourceText) return "";
   return normalized;
 }
