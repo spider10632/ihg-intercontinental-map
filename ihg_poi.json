@@ -518,16 +518,19 @@
   {
     "map_label_name": "蘇阿姨比薩屋",
     "name_zh": "蘇阿姨比薩屋",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "Aunt Su's Pizza House",
+    "name_ja": "蘇阿姨比薩屋",
     "primary_category": "餐飲",
     "subcategory": "午餐|晚餐",
     "business_type": "restaurant",
-    "meal_tags": [],
+    "meal_tags": [
+      "午餐",
+      "晚餐"
+    ],
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0391419,121.5574355",
     "address_zh": "106臺北市大安區光復南路300號",
     "phone": "02 2740 2328",
-    "opening_hours": "星期一: 休息；星期二: 11:00 – 22:00；星期三: 11:00 – 22:00；星期四: 11:00 – 22:00；星期五: 11:00 – 22:00；星期六: 11:00 – 22:00；星期日: 11:00 – 22:00",
+    "opening_hours": "11:00 – 22:00",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -535,7 +538,14 @@
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_018",
-    "display_order": 18
+    "display_order": 18,
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": "",
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-05-01T13:48:01.893Z"
   },
   {
     "map_label_name": "弘燁模型",
