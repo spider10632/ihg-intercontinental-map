@@ -611,8 +611,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "宣牛溫體牛肉火鍋(光復店)",
     "name_zh": "宣牛溫體牛肉火鍋(光復店)",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "宣牛溫體牛肉火鍋(光復店)",
+    "name_ja": "宣牛温体牛肉火鍋",
     "primary_category": "餐飲",
     "subcategory": "午餐|晚餐",
     "business_type": "restaurant",
@@ -623,7 +623,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0391299,121.557025",
     "address_zh": "106臺北市大安區光復南路290巷5號",
     "phone": "02 2775 3232",
-    "opening_hours": "星期一: 12:00 – 21:30；星期二: 12:00 – 21:30；星期三: 休息；星期四: 12:00 – 21:30；星期五: 12:00 – 21:30；星期六: 12:00 – 21:30；星期日: 12:00 – 21:30",
+    "opening_hours": "12:00 – 21:30",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -635,7 +635,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:11:02.789Z"
+    "updated_at": "2026-05-01T13:48:17.894Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "BaganHood 蔬食餐酒館",
