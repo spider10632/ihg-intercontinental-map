@@ -69,6 +69,7 @@ const dom = {
   rebuildBtn: document.querySelector("#rebuild-btn"),
   syncWeeklyBtn: document.querySelector("#sync-weekly-btn"),
   fillMissingHoursBtn: document.querySelector("#fill-missing-hours-btn"),
+  fillMissingNamesBtn: document.querySelector("#fill-missing-names-btn"),
   apiKeyInput: document.querySelector("#gmaps-api-key"),
   apiKeySaveBtn: document.querySelector("#save-api-key-btn"),
   apiKeyClearBtn: document.querySelector("#clear-api-key-btn"),
@@ -80,6 +81,7 @@ const dom = {
 };
 
 let isBulkUpdatingHours = false;
+let isBulkUpdatingNames = false;
 let runtimeGoogleMapsApiKey = "";
 
 function normalizeText(value) {
@@ -1365,6 +1367,56 @@ async function fillMissingTodayHours() {
   }
 }
 
+async function fillMissingLocalizedNames() {
+  if (isBulkUpdatingNames) return;
+
+  if (!getGoogleMapsApiKey()) {
+    log("尚未設定 Google Maps API 金鑰，請先在上方貼上並儲存金鑰。");
+    return;
+  }
+
+  const rows = Array.from(dom.placeBody.querySelectorAll(".place-editor"));
+  const targetRows = rows.filter((rowEl) => {
+    const nameEnInput = getRowInput(rowEl, ".js-name-en");
+    const nameJaInput = getRowInput(rowEl, ".js-name-ja");
+    return isMissingValue(nameEnInput ? nameEnInput.value : "") || isMissingValue(nameJaInput ? nameJaInput.value : "");
+  });
+
+  if (!targetRows.length) {
+    log("目前所有點位都有英日名稱，無需補齊。");
+    return;
+  }
+
+  isBulkUpdatingNames = true;
+  const originalText = setButtonBusy(dom.fillMissingNamesBtn, "補齊中...");
+  let successCount = 0;
+
+  try {
+    for (const rowEl of targetRows) {
+      const fetchBtn = rowEl.querySelector(".js-fetch-hours");
+      const result = await fetchTodayHoursForRow(
+        rowEl,
+        fetchBtn instanceof HTMLButtonElement ? fetchBtn : null,
+        {
+          autoSave: true,
+          skipRefreshOnSave: true,
+          silentLog: true,
+        }
+      );
+      if (result.ok) {
+        successCount += 1;
+      }
+      await sleep(LOOKUP_THROTTLE_MS);
+    }
+
+    await refreshList();
+    log(`批次名稱補齊完成：${successCount}/${targetRows.length} 筆已更新英日名稱。`);
+  } finally {
+    isBulkUpdatingNames = false;
+    restoreButton(dom.fillMissingNamesBtn, originalText);
+  }
+}
+
 async function saveApiKeyFromInput() {
   if (!(dom.apiKeyInput instanceof HTMLInputElement)) return;
   const inputKey = dom.apiKeyInput.value.trim();
@@ -1442,6 +1494,11 @@ if (dom.syncWeeklyBtn) {
 if (dom.fillMissingHoursBtn) {
   dom.fillMissingHoursBtn.addEventListener("click", () => {
     fillMissingTodayHours().catch((error) => log(`補齊失敗：${friendlyError(error)}`));
+  });
+}
+if (dom.fillMissingNamesBtn) {
+  dom.fillMissingNamesBtn.addEventListener("click", () => {
+    fillMissingLocalizedNames().catch((error) => log(`補齊名稱失敗：${friendlyError(error)}`));
   });
 }
 if (dom.apiKeySaveBtn) {

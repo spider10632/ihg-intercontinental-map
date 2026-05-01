@@ -107,6 +107,13 @@ body {
   font-weight: 700;
 }
 
+#fill-missing-names-btn {
+  border-color: #c6d8cc;
+  background: #eaf6ee;
+  color: #1f6b45;
+  font-weight: 700;
+}
+
 #sync-weekly-btn {
   border-color: #d8ccb9;
   background: var(--accent-soft);
@@ -124,8 +131,14 @@ body {
   background: #dde8f6;
 }
 
+#fill-missing-names-btn:hover {
+  border-color: #b8d4c2;
+  background: #def0e5;
+}
+
 #sync-weekly-btn:disabled,
-#fill-missing-hours-btn:disabled {
+#fill-missing-hours-btn:disabled,
+#fill-missing-names-btn:disabled {
   opacity: 0.62;
   cursor: not-allowed;
 }
