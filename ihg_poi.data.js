@@ -800,8 +800,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "年三十鐵板串燒居酒屋 光復店",
     "name_zh": "年三十鐵板串燒居酒屋 光復店",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "年三十鐵板串燒居酒屋 光復店",
+    "name_ja": "年三十鉄板串焼居酒屋 光復店",
     "primary_category": "餐飲",
     "subcategory": "晚餐|宵夜",
     "business_type": "restaurant",
@@ -811,7 +811,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.038995,121.556083",
     "address_zh": "10694臺北市大安區光復南路308巷30號",
     "phone": "02 2771 1730",
-    "opening_hours": "星期一: 17:00 – 23:30；星期二: 17:00 – 23:30；星期三: 17:00 – 23:30；星期四: 17:00 – 23:30；星期五: 17:00 – 23:30；星期六: 17:00 – 23:30；星期日: 17:00 – 23:30",
+    "opening_hours": "17:00 – 23:30",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -823,7 +823,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:11:45.165Z"
+    "updated_at": "2026-05-01T13:48:47.896Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "鯛擔麵專賣店（台灣）—抱きしめ鯛",
