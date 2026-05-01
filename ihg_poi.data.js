@@ -237,8 +237,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "青花驕麻辣鍋 台北光復南店",
     "name_zh": "青花驕麻辣鍋 台北光復南店",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "Chin Hua Jiao Taipei Guangfu South Branch",
+    "name_ja": "Chin Hua Jiao Taipei Guangfu South Branch",
     "primary_category": "餐飲",
     "subcategory": "午餐|晚餐",
     "business_type": "restaurant",
@@ -249,7 +249,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0436277,121.5574946",
     "address_zh": "106臺北市大安區光復南路100號",
     "phone": "02 8772 0659",
-    "opening_hours": "星期一: 11:30 – 01:00；星期二: 11:30 – 01:00；星期三: 11:30 – 01:00；星期四: 11:30 – 01:00；星期五: 11:30 – 01:00；星期六: 11:00 – 01:00；星期日: 11:00 – 01:00",
+    "opening_hours": "11:30 – 01:00",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -261,7 +261,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:09:00.983Z"
+    "updated_at": "2026-05-01T13:47:23.938Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "gonnaPLUS地中海健康旗艦餐廳",
