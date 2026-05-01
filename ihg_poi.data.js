@@ -330,8 +330,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "誠品生活松菸",
     "name_zh": "誠品生活松菸",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "Eslite Spectrum Songyan",
+    "name_ja": "誠品生活松菸店",
     "primary_category": "商店",
     "subcategory": "百貨",
     "business_type": "shop",
@@ -339,7 +339,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.044545,121.5614574",
     "address_zh": "110臺北市信義區菸廠路88號",
     "phone": "02 6636 5888",
-    "opening_hours": "星期一: 11:00 – 22:00；星期二: 11:00 – 22:00；星期三: 11:00 – 22:00；星期四: 11:00 – 22:00；星期五: 11:00 – 22:00；星期六: 11:00 – 22:00；星期日: 11:00 – 22:00",
+    "opening_hours": "11:00 – 22:00",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -351,7 +351,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:09:56.233Z"
+    "updated_at": "2026-05-01T13:47:35.991Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "BURGER OUT",
