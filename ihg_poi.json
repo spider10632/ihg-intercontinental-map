@@ -1016,8 +1016,8 @@
   {
     "map_label_name": "Taipei 101 Rainbow Walk",
     "name_zh": "Taipei 101 Rainbow Walk",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "Taipei 101 Rainbow Walk",
+    "name_ja": "Taipei 101 Rainbow Walk",
     "primary_category": "景點",
     "subcategory": "其他",
     "business_type": "attraction",
@@ -1025,7 +1025,7 @@
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.037855999999998,121.56327399999999",
     "address_zh": "Taipei City Hall, 市府路信義區臺北市110",
     "phone": "店家未提供",
-    "opening_hours": "星期一: 24 小時營業；星期二: 24 小時營業；星期三: 24 小時營業；星期四: 24 小時營業；星期五: 24 小時營業；星期六: 24 小時營業；星期日: 24 小時營業",
+    "opening_hours": "24 小時營業",
     "near_mrt": "市政府站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -1033,7 +1033,14 @@
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_034",
-    "display_order": 34
+    "display_order": 34,
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": "",
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-05-01T13:49:22.872Z"
   },
   {
     "map_label_name": "一品 花 雕 雞 市民旗艦店",
