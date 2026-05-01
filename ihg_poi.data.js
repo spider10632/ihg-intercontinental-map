@@ -1045,8 +1045,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "一品 花 雕 雞 市民旗艦店",
     "name_zh": "一品 花 雕 雞 市民旗艦店",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "一品 花 雕 雞 市民旗艦店",
+    "name_ja": "一品 花 凋 鶏 市民旗艦店",
     "primary_category": "餐飲",
     "subcategory": "晚餐|宵夜",
     "business_type": "restaurant",
@@ -1069,7 +1069,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:15:19.504Z"
+    "updated_at": "2026-05-01T13:49:27.861Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "國家鐵道博物館",
