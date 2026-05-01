@@ -269,8 +269,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "gonnaPLUS地中海健康旗艦餐廳",
     "name_zh": "gonnaPLUS地中海健康旗艦餐廳",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "gonnaPLUS",
+    "name_ja": "gonnaPLUS地中海健康旗艦餐庁",
     "primary_category": "餐飲",
     "subcategory": "午餐|晚餐",
     "business_type": "restaurant",
@@ -281,7 +281,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0435187,121.561639",
     "address_zh": "110臺北市信義區光復南路133號松山文創園區生態池畔旁",
     "phone": "02 2769 2885",
-    "opening_hours": "星期一: 11:30 – 20:00；星期二: 11:30 – 20:00；星期三: 11:30 – 20:00；星期四: 11:30 – 20:00；星期五: 11:30 – 20:30；星期六: 11:00 – 20:30；星期日: 11:00 – 20:00",
+    "opening_hours": "11:30 – 20:30",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -293,7 +293,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:09:06.971Z"
+    "updated_at": "2026-05-01T13:47:28.027Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "國立國父紀念館",
