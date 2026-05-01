@@ -1135,16 +1135,19 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "漢堡排 嘉 GARDEN CITY遠東大巨蛋店",
     "name_zh": "漢堡排 嘉 GARDEN CITY遠東大巨蛋店",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "Hamburg Yoshi Taipei Dome",
+    "name_ja": "Hamburg Yoshi Taipei Dome",
     "primary_category": "餐飲",
     "subcategory": "午餐|晚餐",
     "business_type": "restaurant",
-    "meal_tags": [],
+    "meal_tags": [
+      "午餐",
+      "晚餐"
+    ],
     "google_maps_url": "https://maps.app.goo.gl/3izmi8rsERCJwmVX6",
     "address_zh": "110臺北市信義區忠孝東路四段515號",
     "phone": "店家未提供",
-    "opening_hours": "星期一: 11:30 – 22:00；星期二: 11:30 – 22:00；星期三: 11:30 – 22:00；星期四: 11:30 – 22:00；星期五: 11:30 – 22:00；星期六: 11:30 – 22:00；星期日: 11:30 – 22:00",
+    "opening_hours": "11:30 – 22:00",
     "near_mrt": "國父紀念館站",
     "notes": "推薦日特選牛舌排定食，風味濃郁、口感出色。店內以炭火燒烤為主，香氣十足，但油煙味較為明顯，衣物容易沾染氣味，建議可提前留意。",
     "source_status": "map_only",
@@ -1152,7 +1155,14 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": false,
     "id": "ihg_038",
-    "display_order": 38
+    "display_order": 38,
+    "notes_zh": "推薦日特選牛舌排定食，風味濃郁、口感出色。店內以炭火燒烤為主，香氣十足，但油煙味較為明顯，衣物容易沾染氣味，建議可提前留意。",
+    "notes_en": "",
+    "notes_ja": "",
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-05-01T13:49:42.887Z"
   },
   {
     "map_label_name": "武蔵野森珈琲Diner",
