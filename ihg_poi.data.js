@@ -359,8 +359,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "BURGER OUT",
     "name_zh": "BURGER OUT",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "BURGER OUT",
+    "name_ja": "BURGER OUT",
     "primary_category": "餐飲",
     "subcategory": "午餐|晚餐",
     "business_type": "restaurant",
@@ -371,7 +371,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0431633,121.563065",
     "address_zh": "11072臺北市信義區忠孝東路四段553巷22弄2號",
     "phone": "02 2756 6860",
-    "opening_hours": "星期一: 休息；星期二: 11:30 – 14:30, 17:00 – 20:30；星期三: 11:30 – 14:30, 17:00 – 20:30；星期四: 11:30 – 14:30, 17:00 – 20:30；星期五: 11:30 – 14:30, 17:00 – 20:30；星期六: 11:30 – 14:30, 17:00 – 20:30；星期日: 11:30 – 14:30, 17:00 – 20:30",
+    "opening_hours": "11:30 – 14:30, 17:00 – 20:30",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -383,7 +383,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:10:14.839Z"
+    "updated_at": "2026-05-01T13:47:40.212Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "旬味 自然鍋物-台北美食 信義區美食 信義區火鍋 信義區火鍋推薦 信義區好吃推薦 信義區火鍋推薦 國父紀念館信義東區美食 台北大巨蛋美食 個人鴛鴦火鍋 火鍋美食",
