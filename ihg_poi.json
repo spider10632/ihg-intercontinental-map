@@ -736,8 +736,8 @@
   {
     "map_label_name": "CURISTA COFFEE奎士咖啡 市府旗艦店",
     "name_zh": "CURISTA COFFEE奎士咖啡 市府旗艦店",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "CURISTA COFFEE Taipei City Hall Shop",
+    "name_ja": "CURISTA COFFEE Taipei City Hall Shop",
     "primary_category": "餐飲",
     "subcategory": "早餐|午餐|晚餐|咖啡",
     "business_type": "restaurant",
@@ -749,7 +749,7 @@
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.041588899999997,121.56405",
     "address_zh": "110臺北市信義區忠孝東路四段563號1樓",
     "phone": "02 2769 1668",
-    "opening_hours": "星期一: 07:30 – 20:00；星期二: 07:30 – 20:00；星期三: 07:30 – 20:00；星期四: 07:30 – 20:00；星期五: 07:30 – 20:00；星期六: 07:30 – 20:00；星期日: 07:30 – 20:00",
+    "opening_hours": "07:30 – 20:00",
     "near_mrt": "市政府站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -761,7 +761,10 @@
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:11:30.894Z"
+    "updated_at": "2026-05-01T13:48:37.871Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "真芳碳烤吐司-信義創始店 台北早餐三明治",
