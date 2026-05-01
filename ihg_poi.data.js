@@ -987,8 +987,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "統一時代百貨 台北店",
     "name_zh": "統一時代百貨 台北店",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "Uni-ustyle",
+    "name_ja": "Uni-ustyle",
     "primary_category": "商店",
     "subcategory": "百貨",
     "business_type": "shop",
@@ -996,7 +996,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0408461,121.5653962",
     "address_zh": "110臺北市信義區忠孝東路五段8號",
     "phone": "02 2729 9699",
-    "opening_hours": "星期一: 11:00 – 21:30；星期二: 11:00 – 21:30；星期三: 11:00 – 21:30；星期四: 11:00 – 21:30；星期五: 11:00 – 22:00；星期六: 11:00 – 22:00；星期日: 11:00 – 21:30",
+    "opening_hours": "11:00 – 22:00",
     "near_mrt": "市政府站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -1008,7 +1008,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:12:23.719Z"
+    "updated_at": "2026-05-01T13:49:17.892Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "Taipei 101 Rainbow Walk",
