@@ -1106,8 +1106,8 @@
   {
     "map_label_name": "博仁綜合醫院",
     "name_zh": "博仁綜合醫院",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "Pojen General Hospital",
+    "name_ja": "博仁総合医院",
     "primary_category": "其他設施",
     "subcategory": "醫院",
     "business_type": "other",
@@ -1115,7 +1115,7 @@
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0499097,121.5576835",
     "address_zh": "105臺北市松山區光復北路66號",
     "phone": "02 2578 6677",
-    "opening_hours": "星期一: 24 小時營業；星期二: 24 小時營業；星期三: 24 小時營業；星期四: 24 小時營業；星期五: 24 小時營業；星期六: 24 小時營業；星期日: 24 小時營業",
+    "opening_hours": "24 小時營業",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -1127,7 +1127,10 @@
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:12:50.730Z"
+    "updated_at": "2026-05-01T13:49:37.901Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "漢堡排 嘉 GARDEN CITY遠東大巨蛋店",
