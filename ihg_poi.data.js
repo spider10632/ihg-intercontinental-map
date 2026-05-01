@@ -1167,16 +1167,19 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "武蔵野森珈琲Diner",
     "name_zh": "武蔵野森珈琲Diner",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "Musashino Mori Coffee Far Eastern Garden City Shop",
+    "name_ja": "Musashino Mori Coffee Far Eastern Garden City Shop",
     "primary_category": "餐飲",
     "subcategory": "早餐|咖啡",
     "business_type": "restaurant",
-    "meal_tags": [],
+    "meal_tags": [
+      "早餐",
+      "咖啡"
+    ],
     "google_maps_url": "https://maps.app.goo.gl/iapMK3uza9L43Nb17",
     "address_zh": "110臺北市信義區忠孝東路四段515號",
     "phone": "0227686118",
-    "opening_hours": "星期一: 07:30 – 22:00；星期二: 07:30 – 22:00；星期三: 07:30 – 22:00；星期四: 07:30 – 22:00；星期五: 07:30 – 22:00；星期六: 07:30 – 22:00；星期日: 07:30 – 22:00",
+    "opening_hours": "07:30 – 22:00",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -1184,6 +1187,13 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": false,
     "id": "ihg_039",
-    "display_order": 39
+    "display_order": 39,
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": "",
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-05-01T13:49:47.867Z"
   }
 ];
