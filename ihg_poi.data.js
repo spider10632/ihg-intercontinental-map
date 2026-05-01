@@ -675,8 +675,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "地中海餐酒館 ABV Bar & Kitchen 台北光復店",
     "name_zh": "地中海餐酒館 ABV Bar & Kitchen 台北光復店",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "ABV Bar & Kitchen",
+    "name_ja": "ABV Bar & Kitchen",
     "primary_category": "餐飲",
     "subcategory": "午餐|晚餐",
     "business_type": "restaurant",
@@ -687,7 +687,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0401435,121.55568079999999",
     "address_zh": "106臺北市大安區光復南路260巷39號",
     "phone": "02 8771 8114",
-    "opening_hours": "星期一: 12:00 – 01:30；星期二: 12:00 – 01:30；星期三: 12:00 – 01:30；星期四: 12:00 – 01:30；星期五: 12:00 – 01:30；星期六: 12:00 – 01:30；星期日: 12:00 – 01:30",
+    "opening_hours": "12:00 – 01:30",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -699,7 +699,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:11:18.974Z"
+    "updated_at": "2026-05-01T13:48:27.934Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "臺灣銀行松山分行",
