@@ -863,8 +863,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "秦味館 Qin Wei Guan",
     "name_zh": "秦味館 Qin Wei Guan",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "Qin Wei Guan",
+    "name_ja": "Qin Wei Guan",
     "primary_category": "餐飲",
     "subcategory": "午餐|晚餐",
     "business_type": "restaurant",
@@ -875,7 +875,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0399226,121.5546196",
     "address_zh": "106臺北市大安區延吉街138巷2號",
     "phone": "02 8771 3288",
-    "opening_hours": "星期一: 休息；星期二: 11:30 – 14:30, 17:30 – 21:30；星期三: 11:30 – 14:30, 17:30 – 21:30；星期四: 11:30 – 14:30, 17:30 – 21:30；星期五: 11:30 – 14:30, 17:30 – 21:30；星期六: 11:30 – 14:30, 17:30 – 21:30；星期日: 11:30 – 14:30, 17:30 – 21:30",
+    "opening_hours": "11:30 – 14:30, 17:30 – 22:30",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -887,7 +887,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:11:58.742Z"
+    "updated_at": "2026-05-01T13:48:57.876Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "舞良麵 Dancing Noodles ｜東區必吃晚餐宵夜 延吉街 大巨蛋美食 無國界涼麵 麵飯（“不一樣乾麵”隔壁巷弄內）",
