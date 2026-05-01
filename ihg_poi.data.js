@@ -150,11 +150,11 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "捷運國父紀念館站(忠孝)",
     "name_zh": "捷運國父紀念館站(忠孝)",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "MRT Sun Yat-Sen Memorial Hall Sta.(Zhongxiao)",
+    "name_ja": "捷運国父紀念館站",
     "primary_category": "交通",
     "subcategory": "捷運站",
-    "business_type": "mrt_station",
+    "business_type": "transport",
     "meal_tags": [],
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.041470399999998,121.5590141",
     "address_zh": "110台灣臺北市信義區",
@@ -167,7 +167,14 @@ window.WANHUA_POI_DATA = [
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_006",
-    "display_order": 6
+    "display_order": 6,
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": "",
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-05-01T13:47:12.146Z"
   },
   {
     "map_label_name": "松山文創園區",
