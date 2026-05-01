@@ -926,8 +926,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "市府轉運站",
     "name_zh": "市府轉運站",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "Taipei City Hall Bus Station",
+    "name_ja": "統聯客運",
     "primary_category": "交通",
     "subcategory": "轉運站",
     "business_type": "transport",
@@ -935,7 +935,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0404967,121.56478249999999",
     "address_zh": "110臺北市信義區忠孝東路五段6號",
     "phone": "02 8780 6252",
-    "opening_hours": "星期一: 05:00 – 01:00；星期二: 05:00 – 01:00；星期三: 05:00 – 01:00；星期四: 05:00 – 01:00；星期五: 05:00 – 01:00；星期六: 05:00 – 01:00；星期日: 05:00 – 01:00",
+    "opening_hours": "05:00 – 01:00",
     "near_mrt": "市政府站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -947,7 +947,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:12:13.283Z"
+    "updated_at": "2026-05-01T13:49:07.874Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "地一牛肉麵",
