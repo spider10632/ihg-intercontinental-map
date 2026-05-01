@@ -769,8 +769,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "真芳碳烤吐司-信義創始店 台北早餐三明治",
     "name_zh": "真芳碳烤吐司-信義創始店 台北早餐三明治",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "Zhen Fang Brunch",
+    "name_ja": "真芳碳烤吐司信義創始店 台北早餐三明治",
     "primary_category": "餐飲",
     "subcategory": "早餐",
     "business_type": "restaurant",
@@ -780,7 +780,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.042463299999998,121.5642637",
     "address_zh": "110臺北市信義區忠孝東路四段559巷16弄17號",
     "phone": "02 2766 6766",
-    "opening_hours": "星期一: 06:30 – 13:30；星期二: 06:30 – 13:30；星期三: 06:30 – 13:30；星期四: 06:30 – 13:30；星期五: 06:30 – 13:30；星期六: 06:30 – 13:30；星期日: 06:30 – 13:30",
+    "opening_hours": "06:30 – 13:30",
     "near_mrt": "市政府站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -792,7 +792,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:11:37.307Z"
+    "updated_at": "2026-05-01T13:48:42.887Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "年三十鐵板串燒居酒屋 光復店",
