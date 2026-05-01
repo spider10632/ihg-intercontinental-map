@@ -519,7 +519,7 @@ window.WANHUA_POI_DATA = [
     "map_label_name": "蘇阿姨比薩屋",
     "name_zh": "蘇阿姨比薩屋",
     "name_en": "Aunt Su's Pizza House",
-    "name_ja": "蘇阿姨比薩屋",
+    "name_ja": "Aunt Su's Pizza House",
     "primary_category": "餐飲",
     "subcategory": "午餐|晚餐",
     "business_type": "restaurant",
@@ -545,7 +545,7 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-01T13:48:01.893Z"
+    "updated_at": "2026-05-01T18:20:23.041Z"
   },
   {
     "map_label_name": "弘燁模型",
