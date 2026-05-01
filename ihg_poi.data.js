@@ -118,8 +118,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "湊湊火鍋•茶憩 大巨蛋店",
     "name_zh": "湊湊火鍋•茶憩 大巨蛋店",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "湊湊火鍋•茶憩 遠東GARDEN CITY大巨蛋店",
+    "name_ja": "湊湊火鍋•茶憩 遠東GARDEN CITY大巨蛋店",
     "primary_category": "餐飲",
     "subcategory": "午餐|晚餐|宵夜",
     "business_type": "restaurant",
@@ -130,7 +130,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.041811499999998,121.5603733",
     "address_zh": "110臺北市信義區忠孝東路四段515號, 遠東GardenCity, 1F",
     "phone": "02 2756 6986",
-    "opening_hours": "星期一: 11:00 – 00:00；星期二: 11:00 – 00:00；星期三: 11:00 – 00:00；星期四: 11:00 – 00:00；星期五: 11:00 – 01:00；星期六: 11:00 – 01:00；星期日: 11:00 – 00:00",
+    "opening_hours": "11:00 – 01:00",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -142,7 +142,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:08:37.201Z"
+    "updated_at": "2026-05-01T13:47:08.082Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "捷運國父紀念館站(忠孝)",
