@@ -15,6 +15,7 @@ const CONFIG_GOOGLE_MAPS_API_KEY = String(window.GOOGLE_MAPS_API_KEY || "").trim
 const GOOGLE_MAPS_API_KEY_STORAGE_KEY = "ihg_google_maps_api_key_v1";
 const GOOGLE_PLACES_TEXT_SEARCH_URL = "https://places.googleapis.com/v1/places:searchText";
 const GOOGLE_PLACES_FIELD_MASK = [
+  "places.name",
   "places.id",
   "places.displayName",
   "places.formattedAddress",
@@ -22,6 +23,8 @@ const GOOGLE_PLACES_FIELD_MASK = [
   "places.googleMapsUri",
   "places.regularOpeningHours.weekdayDescriptions",
 ].join(",");
+const GOOGLE_PLACE_DETAILS_URL_BASE = "https://places.googleapis.com/v1";
+const GOOGLE_PLACE_DETAILS_FIELD_MASK = "id,name,displayName";
 const LOOKUP_THROTTLE_MS = 180;
 
 const DAY_TOKENS = [
@@ -48,6 +51,8 @@ const dom = {
   form: document.querySelector("#place-form"),
   listName: document.querySelector("#list-name"),
   name: document.querySelector("#name"),
+  nameEn: document.querySelector("#name-en"),
+  nameJa: document.querySelector("#name-ja"),
   address: document.querySelector("#address"),
   lat: document.querySelector("#lat"),
   lng: document.querySelector("#lng"),
@@ -515,6 +520,8 @@ function buildPayload() {
   return {
     list_name: dom.listName.value.trim(),
     name: dom.name.value.trim(),
+    name_en: dom.nameEn ? dom.nameEn.value.trim() : "",
+    name_ja: dom.nameJa ? dom.nameJa.value.trim() : "",
     address: dom.address.value.trim(),
     lat: dom.lat.value.trim(),
     lng: dom.lng.value.trim(),
@@ -554,6 +561,8 @@ function renderRows(items) {
       const lat = row.lat !== null && row.lat !== undefined ? row.lat : "";
       const lng = row.lng !== null && row.lng !== undefined ? row.lng : "";
       const mapsUrl = row.maps_url || "";
+      const nameEn = row.name_en || "";
+      const nameJa = row.name_ja || "";
       const primaryCategory = row.primary_category || "";
       const subcategory = row.subcategory || "";
       const openingHours = row.opening_hours || "";
@@ -577,6 +586,14 @@ function renderRows(items) {
               <label class="editor-field editor-field--name">
                 <span class="editor-label">Name</span>
                 <input class="inline-input js-name" data-id="${htmlEscape(row.id)}" value="${htmlEscape(row.name || "")}" />
+              </label>
+              <label class="editor-field editor-field--name-en">
+                <span class="editor-label">Name (EN)</span>
+                <input class="inline-input js-name-en" data-id="${htmlEscape(row.id)}" value="${htmlEscape(nameEn)}" />
+              </label>
+              <label class="editor-field editor-field--name-ja">
+                <span class="editor-label">Name (JA)</span>
+                <input class="inline-input js-name-ja" data-id="${htmlEscape(row.id)}" value="${htmlEscape(nameJa)}" />
               </label>
               <label class="editor-field editor-field--address">
                 <span class="editor-label">Address</span>
@@ -660,6 +677,24 @@ async function onSubmit(event) {
   }
 
   try {
+    if ((!payload.name_en || !payload.name_ja) && getGoogleMapsApiKey()) {
+      try {
+        const localized = await resolveLocalizedNamesByRowData({
+          name: payload.name,
+          address: payload.address,
+          lat: payload.lat,
+          lng: payload.lng,
+          mapsUrl: payload.maps_url,
+        });
+        if (!payload.name_en && localized.en) payload.name_en = localized.en;
+        if (!payload.name_ja && localized.ja) payload.name_ja = localized.ja;
+        if (dom.nameEn instanceof HTMLInputElement && payload.name_en) dom.nameEn.value = payload.name_en;
+        if (dom.nameJa instanceof HTMLInputElement && payload.name_ja) dom.nameJa.value = payload.name_ja;
+      } catch (_error) {
+        // keep creation flow even if localized-name lookup fails
+      }
+    }
+
     const data = await fetchJson("/places", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -742,6 +777,8 @@ function restoreButton(buttonEl, originalText) {
 
 async function saveInlineRow(placeId, rowEl, buttonEl, options = {}) {
   const nameInput = getRowInput(rowEl, ".js-name");
+  const nameEnInput = getRowInput(rowEl, ".js-name-en");
+  const nameJaInput = getRowInput(rowEl, ".js-name-ja");
   const addressInput = getRowInput(rowEl, ".js-address");
   const phoneInput = getRowInput(rowEl, ".js-phone");
   const primaryCategoryInput = getRowInput(rowEl, ".js-primary-category");
@@ -761,6 +798,8 @@ async function saveInlineRow(placeId, rowEl, buttonEl, options = {}) {
   const payload = {
     list_name: dom.listName.value.trim() || DEFAULT_LIST_NAME,
     name: nameInput ? nameInput.value.trim() : "",
+    name_en: nameEnInput ? nameEnInput.value.trim() : "",
+    name_ja: nameJaInput ? nameJaInput.value.trim() : "",
     address: addressInput ? addressInput.value.trim() : "",
     phone: phoneInput ? phoneInput.value.trim() : "",
     primary_category: primaryCategoryInput ? primaryCategoryInput.value.trim() : "",
@@ -895,7 +934,44 @@ function buildLookupQueries(rowData) {
   return uniqueValues(queries.map((item) => normalizeText(item)));
 }
 
-async function queryPlaceByText(query) {
+async function resolveLocalizedNamesByRowData(rowData) {
+  const queries = buildLookupQueries(rowData);
+  if (!queries.length) return { en: "", ja: "", query: "" };
+
+  for (const query of queries) {
+    let places = [];
+    try {
+      places = await queryPlaceByText(query, "zh-TW", 3);
+    } catch (error) {
+      const code = String(error && error.message ? error.message : "");
+      if (
+        code === "GOOGLE_API_KEY_MISSING" ||
+        code === "GOOGLE_API_FORBIDDEN" ||
+        code === "GOOGLE_API_OVER_QUERY_LIMIT"
+      ) {
+        throw error;
+      }
+      continue;
+    }
+
+    const best = pickBestCandidate(places, rowData.name);
+    if (!best) {
+      await sleep(LOOKUP_THROTTLE_MS);
+      continue;
+    }
+
+    const localized = await fetchLocalizedNamesFromGoogle(best, query);
+    return {
+      en: normalizeText(localized.en),
+      ja: normalizeText(localized.ja),
+      query,
+    };
+  }
+
+  return { en: "", ja: "", query: "" };
+}
+
+async function queryPlaceByText(query, languageCode = "zh-TW", maxResultCount = 3) {
   const googleMapsApiKey = getGoogleMapsApiKey();
   if (!googleMapsApiKey) {
     throw new Error("GOOGLE_API_KEY_MISSING");
@@ -912,9 +988,9 @@ async function queryPlaceByText(query) {
       },
       body: JSON.stringify({
         textQuery: query,
-        languageCode: "zh-TW",
+        languageCode: normalizeText(languageCode) || "zh-TW",
         regionCode: "TW",
-        maxResultCount: 3,
+        maxResultCount: Number.isFinite(Number(maxResultCount)) ? Number(maxResultCount) : 3,
       }),
     });
   } catch (_error) {
@@ -937,6 +1013,76 @@ async function queryPlaceByText(query) {
 
 function getCandidateName(place) {
   return normalizeText(place?.displayName?.text || place?.displayName || "");
+}
+
+function getCandidateResourceName(place) {
+  const resource = normalizeText(place?.name);
+  if (resource.startsWith("places/")) return resource;
+  const id = normalizeText(place?.id);
+  if (!id) return "";
+  return id.startsWith("places/") ? id : `places/${id}`;
+}
+
+async function fetchPlaceDisplayNameByResource(resourceName, languageCode = "en") {
+  const googleMapsApiKey = getGoogleMapsApiKey();
+  if (!googleMapsApiKey) {
+    throw new Error("GOOGLE_API_KEY_MISSING");
+  }
+  const resource = normalizeText(resourceName);
+  if (!resource) return "";
+
+  const url = new URL(`${GOOGLE_PLACE_DETAILS_URL_BASE}/${resource}`);
+  url.searchParams.set("languageCode", normalizeText(languageCode) || "en");
+  url.searchParams.set("regionCode", "TW");
+
+  let response;
+  try {
+    response = await fetch(url.toString(), {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Goog-Api-Key": googleMapsApiKey,
+        "X-Goog-FieldMask": GOOGLE_PLACE_DETAILS_FIELD_MASK,
+      },
+    });
+  } catch (_error) {
+    throw new Error("GOOGLE_API_NETWORK_ERROR");
+  }
+
+  if (response.status === 401 || response.status === 403) {
+    throw new Error("GOOGLE_API_FORBIDDEN");
+  }
+  if (response.status === 429) {
+    throw new Error("GOOGLE_API_OVER_QUERY_LIMIT");
+  }
+  if (!response.ok) {
+    throw new Error(`GOOGLE_API_HTTP_${response.status}`);
+  }
+
+  const payload = await response.json().catch(() => ({}));
+  return normalizeText(payload?.displayName?.text || payload?.displayName || "");
+}
+
+async function fetchLocalizedNamesFromGoogle(candidate, fallbackQuery = "") {
+  const resource = getCandidateResourceName(candidate);
+
+  if (resource) {
+    const en = await fetchPlaceDisplayNameByResource(resource, "en");
+    await sleep(LOOKUP_THROTTLE_MS);
+    const ja = await fetchPlaceDisplayNameByResource(resource, "ja");
+    return { en, ja };
+  }
+
+  // Fallback path (should be rare): text search by language.
+  const query = normalizeText(fallbackQuery);
+  if (!query) return { en: "", ja: "" };
+
+  const enCandidates = await queryPlaceByText(query, "en", 1);
+  const en = getCandidateName(enCandidates[0]);
+  await sleep(LOOKUP_THROTTLE_MS);
+  const jaCandidates = await queryPlaceByText(query, "ja", 1);
+  const ja = getCandidateName(jaCandidates[0]);
+  return { en, ja };
 }
 
 function getTaipeiDayIndex() {
@@ -1033,6 +1179,8 @@ async function fetchTodayHoursForRow(rowEl, triggerBtn, options = {}) {
   if (!placeId) return { ok: false, reason: "missing-id" };
 
   const nameInput = getRowInput(rowEl, ".js-name");
+  const nameEnInput = getRowInput(rowEl, ".js-name-en");
+  const nameJaInput = getRowInput(rowEl, ".js-name-ja");
   const addressInput = getRowInput(rowEl, ".js-address");
   const phoneInput = getRowInput(rowEl, ".js-phone");
   const openingHoursInput = getRowInput(rowEl, ".js-opening-hours");
@@ -1042,6 +1190,8 @@ async function fetchTodayHoursForRow(rowEl, triggerBtn, options = {}) {
 
   const rowData = {
     name: nameInput ? nameInput.value : "",
+    nameEn: nameEnInput ? nameEnInput.value : "",
+    nameJa: nameJaInput ? nameJaInput.value : "",
     address: addressInput ? addressInput.value : "",
     phone: phoneInput ? phoneInput.value : "",
     openingHours: openingHoursInput ? openingHoursInput.value : "",
@@ -1099,6 +1249,16 @@ async function fetchTodayHoursForRow(rowEl, triggerBtn, options = {}) {
     const fromAddress = normalizeText(candidate?.formattedAddress);
     const fromPhone = normalizeText(candidate?.nationalPhoneNumber);
     const fromMapUri = normalizeText(candidate?.googleMapsUri);
+    let localizedNameEn = "";
+    let localizedNameJa = "";
+
+    try {
+      const localized = await fetchLocalizedNamesFromGoogle(candidate, matchedQuery || rowData.name);
+      localizedNameEn = normalizeText(localized.en);
+      localizedNameJa = normalizeText(localized.ja);
+    } catch (_error) {
+      // keep hours/address/phone flow even if localized-name fetch fails
+    }
 
     if (openingHoursInput && todayHours) {
       openingHoursInput.value = todayHours;
@@ -1112,10 +1272,19 @@ async function fetchTodayHoursForRow(rowEl, triggerBtn, options = {}) {
     if (mapsUrlInput && isMissingValue(mapsUrlInput.value) && fromMapUri) {
       mapsUrlInput.value = fromMapUri;
     }
+    if (nameEnInput && localizedNameEn) {
+      nameEnInput.value = localizedNameEn;
+    }
+    if (nameJaInput && localizedNameJa) {
+      nameJaInput.value = localizedNameJa;
+    }
 
     if (!silentLog) {
       const hoursText = todayHours || "Google 未提供今日營業時間";
-      log(`ID ${placeId} 抓取成功：${hoursText}（查詢：${matchedQuery}）`);
+      const nameLog = [localizedNameEn ? `EN=${localizedNameEn}` : "", localizedNameJa ? `JA=${localizedNameJa}` : ""]
+        .filter(Boolean)
+        .join(" / ");
+      log(`ID ${placeId} 抓取成功：${hoursText}${nameLog ? `；名稱：${nameLog}` : ""}（查詢：${matchedQuery}）`);
     }
 
     if (autoSave) {

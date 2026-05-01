@@ -374,11 +374,19 @@ tbody tr td {
 }
 
 .editor-row--top .editor-field--name {
-  flex: 1.8 1 260px;
+  flex: 1.5 1 220px;
+}
+
+.editor-row--top .editor-field--name-en {
+  flex: 1.4 1 220px;
+}
+
+.editor-row--top .editor-field--name-ja {
+  flex: 1.4 1 220px;
 }
 
 .editor-row--top .editor-field--address {
-  flex: 2.4 1 320px;
+  flex: 2.2 1 300px;
 }
 
 .editor-row--top .editor-field--phone {

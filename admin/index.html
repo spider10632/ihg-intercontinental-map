@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IHG 點位後台</title>
-    <link rel="stylesheet" href="./admin.css?v=20260428-8" />
+    <link rel="stylesheet" href="./admin.css?v=20260501-1" />
   </head>
   <body>
     <main class="wrap">
@@ -44,6 +44,14 @@
           <label>
             點位名稱（必填）
             <input id="name" name="name" required />
+          </label>
+          <label>
+            英文名稱（可選）
+            <input id="name-en" name="name_en" placeholder="Google Maps English name" />
+          </label>
+          <label>
+            日文名稱（可選）
+            <input id="name-ja" name="name_ja" placeholder="Google Maps Japanese name" />
           </label>
           <label class="full">
             地址
@@ -127,7 +135,7 @@
           <h2>目前點位</h2>
           <p id="count-text">讀取中...</p>
         </div>
-        <p>每筆資料分兩排編輯：上排名稱/地址/電話/主分類/子分類/營業時間；下排座標/Google Maps 連結/三語介紹，再按「修改」即可。</p>
+        <p>每筆資料分兩排編輯：上排中文名/英名/日名/地址/電話/主分類/子分類/營業時間；下排座標/Google Maps 連結/三語介紹，再按「修改」即可。</p>
         <div class="table-wrap">
           <table>
             <thead>
@@ -150,6 +158,6 @@
     <script>
       window.ADMIN_API_ORIGIN = "https://ihg-admin-api.spider10632.workers.dev";
     </script>
-    <script src="./admin.js?v=20260428-7"></script>
+    <script src="./admin.js?v=20260501-1"></script>
   </body>
 </html>
