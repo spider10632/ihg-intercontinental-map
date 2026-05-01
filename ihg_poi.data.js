@@ -643,8 +643,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "BaganHood 蔬食餐酒館",
     "name_zh": "BaganHood 蔬食餐酒館",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "BaganHood (Vegan Restaurant) -Taipei City Hall Station",
+    "name_ja": "BaganHood (Vegan Restaurant) -Taipei City Hall Station",
     "primary_category": "餐飲",
     "subcategory": "午餐|晚餐",
     "business_type": "restaurant",
@@ -655,7 +655,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0443206,121.5634869",
     "address_zh": "110臺北市信義區忠孝東路四段553巷46弄11號",
     "phone": "02 3762 2557",
-    "opening_hours": "星期一: 11:30 – 16:00, 17:00 – 22:00；星期二: 11:30 – 16:00, 17:00 – 22:00；星期三: 11:30 – 16:00, 17:00 – 22:00；星期四: 11:30 – 16:00, 17:00 – 22:00；星期五: 11:30 – 16:00, 17:00 – 22:00；星期六: 11:30 – 16:00, 17:00 – 22:00；星期日: 11:30 – 16:00, 17:00 – 22:00",
+    "opening_hours": "11:30 – 16:00, 17:00 – 22:00",
     "near_mrt": "市政府站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -667,7 +667,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:11:08.371Z"
+    "updated_at": "2026-05-01T13:48:22.893Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "地中海餐酒館 ABV Bar & Kitchen 台北光復店",
