@@ -24,8 +24,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "臺北大巨蛋",
     "name_zh": "臺北大巨蛋",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "Taipei Dome",
+    "name_ja": "台北ドーム",
     "primary_category": "景點",
     "subcategory": "商圈",
     "business_type": "attraction",
@@ -33,7 +33,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0424367,121.55950659999999",
     "address_zh": "110臺北市信義區忠孝東路四段515號",
     "phone": "02 2722 8811",
-    "opening_hours": "星期一: 24 小時營業；星期二: 24 小時營業；星期三: 24 小時營業；星期四: 24 小時營業；星期五: 24 小時營業；星期六: 24 小時營業；星期日: 24 小時營業",
+    "opening_hours": "24 小時營業",
     "near_mrt": "國父紀念館站",
     "notes": "臺北大巨蛋 (Taipei Dome) 是台灣唯一的巨蛋級多功能室內場館，於 2023 年底正式啟用。它提供不受天氣影響的觀賽與活動空間，包含棒球賽、演唱會等多樣化功能。",
     "source_status": "map_only",
@@ -45,7 +45,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-28T00:53:40.123Z"
+    "updated_at": "2026-05-01T13:46:55.884Z",
+    "notes_zh": "臺北大巨蛋 (Taipei Dome) 是台灣唯一的巨蛋級多功能室內場館，於 2023 年底正式啟用。它提供不受天氣影響的觀賽與活動空間，包含棒球賽、演唱會等多樣化功能。",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "PRESERVE 遠東GARDEN CITY 大巨蛋店",
@@ -65,7 +68,7 @@ window.WANHUA_POI_DATA = [
     "phone": "02 2761 3365",
     "opening_hours": "星期一: 09:00 – 20:00；星期二: 09:00 – 20:00；星期三: 09:00 – 20:00；星期四: 09:00 – 20:00；星期五: 09:00 – 20:00；星期六: 09:00 – 20:15；星期日: 09:00 – 20:15",
     "near_mrt": "國父紀念館站",
-    "notes": "必點招牌「無澱粉酪梨漢堡」。用整顆酪梨完美取代漢堡麵包，清爽健康且極具視覺張力，搭配每日現烤麵包，是早午餐的絕佳選擇。",
+    "notes": "以「超級食物」酪梨為核心，必點招牌「無澱粉酪梨漢堡」。用整顆酪梨完美取代漢堡麵包，清爽健康且極具視覺張力，搭配每日現烤麵包，是早午餐的絕佳選擇。",
     "source_status": "map_only",
     "source_url": "https://www.google.com/maps/search/?api=1&query=25.0430378,121.5596193",
     "is_active": true,
@@ -75,7 +78,7 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-28T12:44:09.205Z"
+    "updated_at": "2026-04-28T00:48:10.520Z"
   },
   {
     "map_label_name": "紫木槿韓餐酒館(遠東Garden City 大巨蛋店)",
@@ -94,7 +97,7 @@ window.WANHUA_POI_DATA = [
     "phone": "02 2766 9905",
     "opening_hours": "星期一: 11:00 – 22:00；星期二: 11:00 – 22:00；星期三: 11:00 – 22:00；星期四: 11:00 – 22:00；星期五: 11:00 – 00:00；星期六: 11:00 – 00:00；星期日: 11:00 – 00:00",
     "near_mrt": "國父紀念館站",
-    "notes": "For a stylish Korean dining experience in Taipei, 紫木槿韓餐酒館 is a great choice.\nIt combines classic Korean dishes with a modern bistro vibe and creative cocktails, perfect for dinner and drinks.\nThe lively, trendy atmosphere makes it ideal for dates or small group gatherings",
+    "notes": "For a stylish Korean dining experience in Taipei, 紫木槿韓餐酒館 is a great choice. It combines classic Korean dishes with a modern bistro vibe and creative cocktails, perfect for dinner and drinks. The lively, trendy atmosphere makes it ideal for dates or small group gatherings",
     "source_status": "map_only",
     "source_url": "https://www.google.com/maps/search/?api=1&query=25.0416275,121.55952979999999",
     "is_active": true,
@@ -104,7 +107,7 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-28T12:39:42.538Z"
+    "updated_at": "2026-04-28T12:44:09.392Z"
   },
   {
     "map_label_name": "湊湊火鍋•茶憩 大巨蛋店",
