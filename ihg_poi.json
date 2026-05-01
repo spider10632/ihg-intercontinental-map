@@ -179,8 +179,8 @@
   {
     "map_label_name": "松山文創園區",
     "name_zh": "松山文創園區",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "Songshan Cultural and Creative Park",
+    "name_ja": "松山文創園区",
     "primary_category": "景點",
     "subcategory": "商圈",
     "business_type": "attraction",
@@ -188,7 +188,7 @@
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0438366,121.5606383",
     "address_zh": "11072臺北市信義區光復南路133號",
     "phone": "02 2765 1388",
-    "opening_hours": "星期一: 08:00 – 22:00；星期二: 08:00 – 22:00；星期三: 08:00 – 22:00；星期四: 08:00 – 22:00；星期五: 08:00 – 22:00；星期六: 08:00 – 22:00；星期日: 08:00 – 22:00",
+    "opening_hours": "08:00 – 22:00",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -196,7 +196,14 @@
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_007",
-    "display_order": 7
+    "display_order": 7,
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": "",
+    "category": "",
+    "lat": 0,
+    "lng": 0,
+    "updated_at": "2026-05-01T13:47:16.253Z"
   },
   {
     "map_label_name": "國父紀念館",
