@@ -487,8 +487,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "東引快刀手 光復店 (必吃知名宵夜美食、平價麵館 滷味小吃)",
     "name_zh": "東引快刀手 光復店 (必吃知名宵夜美食、平價麵館 滷味小吃)",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "東引快刀手 光復店",
+    "name_ja": "東引快刀手 光復店",
     "primary_category": "餐飲",
     "subcategory": "午餐|晚餐|宵夜",
     "business_type": "restaurant",
@@ -498,7 +498,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0458164,121.5576116",
     "address_zh": "105臺北市松山區光復南路54號",
     "phone": "02 2577 7787",
-    "opening_hours": "星期一: 11:00 – 02:00；星期二: 11:00 – 02:00；星期三: 11:00 – 02:00；星期四: 11:00 – 02:00；星期五: 11:00 – 02:00；星期六: 11:00 – 02:00；星期日: 11:00 – 02:00",
+    "opening_hours": "11:00 – 02:00",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -510,7 +510,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:10:47.092Z"
+    "updated_at": "2026-05-01T13:47:56.544Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "蘇阿姨比薩屋",
