@@ -955,8 +955,8 @@ window.WANHUA_POI_DATA = [
   {
     "map_label_name": "地一牛肉麵",
     "name_zh": "地一牛肉麵",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "Di Yi Beef Noodle Restaurant",
+    "name_ja": "地一牛肉面",
     "primary_category": "餐飲",
     "subcategory": "晚餐",
     "business_type": "restaurant",
@@ -967,7 +967,7 @@ window.WANHUA_POI_DATA = [
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0392007,121.5549147",
     "address_zh": "106臺北市大安區延吉街162號",
     "phone": "02 2775 5525",
-    "opening_hours": "星期一: 11:30 – 22:30；星期二: 11:30 – 22:30；星期三: 11:30 – 22:30；星期四: 11:30 – 22:30；星期五: 11:30 – 22:30；星期六: 11:30 – 22:30；星期日: 11:30 – 22:30",
+    "opening_hours": "11:30 – 22:30",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -979,7 +979,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:12:17.431Z"
+    "updated_at": "2026-05-01T13:49:12.898Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "統一時代百貨 台北店",
