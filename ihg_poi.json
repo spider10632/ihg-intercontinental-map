@@ -895,8 +895,8 @@
   {
     "map_label_name": "舞良麵 Dancing Noodles ｜東區必吃晚餐宵夜 延吉街 大巨蛋美食 無國界涼麵 麵飯（“不一樣乾麵”隔壁巷弄內）",
     "name_zh": "舞良麵 Dancing Noodles ｜東區必吃晚餐宵夜 延吉街 大巨蛋美食 無國界涼麵 麵飯（“不一樣乾麵”隔壁巷弄內）",
-    "name_en": "",
-    "name_ja": "",
+    "name_en": "舞良麵",
+    "name_ja": "舞良面 Dancing Noodles ｜東区必吃晩餐宵夜 延吉街 大巨蛋美食 無国界涼面 面飯（“不一様乾面”隔壁巷弄内）",
     "primary_category": "餐飲",
     "subcategory": "晚餐|宵夜",
     "business_type": "restaurant",
@@ -906,7 +906,7 @@
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.0423062,121.5538876",
     "address_zh": "106臺北市大安區延吉街70巷5弄3號1樓",
     "phone": "02 8771 4450",
-    "opening_hours": "星期一: 休息；星期二: 18:00 – 01:30；星期三: 18:00 – 01:30；星期四: 18:00 – 01:30；星期五: 18:00 – 01:30；星期六: 18:00 – 01:30；星期日: 18:00 – 00:00",
+    "opening_hours": "18:00 – 01:30",
     "near_mrt": "國父紀念館站",
     "notes": "來源：Google Maps 大巨蛋清單",
     "source_status": "map_only",
@@ -918,7 +918,10 @@
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-04-26T22:12:05.063Z"
+    "updated_at": "2026-05-01T13:49:02.898Z",
+    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_en": "",
+    "notes_ja": ""
   },
   {
     "map_label_name": "市府轉運站",
