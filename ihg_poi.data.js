@@ -986,10 +986,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:38:48.321Z",
+    "updated_at": "2026-05-14T15:45:53.023Z",
     "notes_zh": "牛肉麵店，適合晚餐時段來一碗熱湯麵，從大巨蛋周邊移動也不遠。",
     "notes_en": "A beef noodle restaurant suitable for a warm, comforting dinner within easy reach of the Taipei Dome area.",
-    "notes_ja": ""
+    "notes_ja": "台北ドーム周辺から行きやすい牛肉麺のお店です。夕食に温かく食べ応えのある一杯を楽しみたい時に向いています。"
   },
   {
     "map_label_name": "統一時代百貨 台北店",
