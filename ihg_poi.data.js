@@ -327,12 +327,12 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_011",
     "display_order": 11,
     "notes_zh": "國父紀念館腹地寬廣、視野開闊，可欣賞台北 101 與周邊城市景觀。",
-    "notes_en": "",
+    "notes_en": "The spacious grounds of the memorial hall offer open city views, including Taipei 101, and make a pleasant stop for sightseeing or a walk.",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:55:19.620Z"
+    "updated_at": "2026-05-14T15:37:29.898Z"
   },
   {
     "map_label_name": "誠品生活松菸",
