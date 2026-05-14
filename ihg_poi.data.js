@@ -1034,20 +1034,20 @@ window.WANHUA_POI_DATA = [
     "phone": "店家未提供",
     "opening_hours": "24 小時營業",
     "near_mrt": "市政府站",
-    "notes": "來源：Google Maps 大巨蛋清單",
+    "notes": "彩虹地景步道鄰近市府與台北 101，適合拍照打卡並順遊信義商圈。",
     "source_status": "map_only",
     "source_url": "https://www.google.com/maps/search/?api=1&query=25.037855999999998,121.56327399999999",
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_034",
     "display_order": 34,
-    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_zh": "彩虹地景步道鄰近市府與台北 101，適合拍照打卡並順遊信義商圈。",
     "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-01T13:49:22.872Z"
+    "updated_at": "2026-05-14T12:56:56.566Z"
   },
   {
     "map_label_name": "一品 花 雕 雞 市民旗艦店",
