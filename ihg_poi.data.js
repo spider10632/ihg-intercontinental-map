@@ -149,10 +149,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:37:06.733Z",
+    "updated_at": "2026-05-14T15:44:09.186Z",
     "notes_zh": "火鍋與茶飲結合的聚餐選擇，營業到深夜，適合看完活動後續攤用餐。",
     "notes_en": "A popular hot pot restaurant combining hearty broths with tea drinks, open late for guests looking for a relaxed meal after an event.",
-    "notes_ja": ""
+    "notes_ja": "火鍋とお茶を組み合わせた人気店です。夜遅くまで営業しており、イベント後にゆっくり食事をしたい時にも便利です。"
   },
   {
     "map_label_name": "捷運國父紀念館站(忠孝)",
