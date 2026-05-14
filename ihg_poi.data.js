@@ -576,12 +576,12 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_019",
     "display_order": 19,
     "notes_zh": "模型與收藏品商店，適合對模型、玩具或周邊商品有興趣的旅客順逛。",
-    "notes_en": "",
+    "notes_en": "A model and collectibles shop for guests interested in hobby items, toys, or character merchandise while exploring the neighborhood.",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:55:53.751Z"
+    "updated_at": "2026-05-14T15:38:00.621Z"
   },
   {
     "map_label_name": "禾記茶餐廳大安店",
