@@ -768,9 +768,9 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:56:18.805Z",
+    "updated_at": "2026-05-14T15:38:23.061Z",
     "notes_zh": "空間明亮的咖啡店，供應咖啡、輕食與甜點，適合早餐、工作或短暫休息。",
-    "notes_en": "",
+    "notes_en": "A bright cafe serving coffee, light meals, and desserts, suitable for breakfast, remote work, or a short break near Taipei City Hall.",
     "notes_ja": ""
   },
   {
