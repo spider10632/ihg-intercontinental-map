@@ -568,20 +568,20 @@ window.WANHUA_POI_DATA = [
     "phone": "02 2745 7722",
     "opening_hours": "13:00 – 21:00",
     "near_mrt": "市政府站",
-    "notes": "來源：Google Maps 大巨蛋清單",
+    "notes": "模型與收藏品商店，適合對模型、玩具或周邊商品有興趣的旅客順逛。",
     "source_status": "map_only",
     "source_url": "https://www.google.com/maps/search/?api=1&query=25.0433973,121.5636026",
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_019",
     "display_order": 19,
-    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_zh": "模型與收藏品商店，適合對模型、玩具或周邊商品有興趣的旅客順逛。",
     "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-01T13:48:07.885Z"
+    "updated_at": "2026-05-14T12:55:53.751Z"
   },
   {
     "map_label_name": "禾記茶餐廳大安店",
