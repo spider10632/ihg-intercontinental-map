@@ -176,12 +176,12 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_006",
     "display_order": 6,
     "notes_zh": "距離大巨蛋最近的捷運站之一，從飯店或場館移動到台北各區都很方便。",
-    "notes_en": "",
+    "notes_en": "One of the closest MRT stations to Taipei Dome, offering convenient access from the hotel and easy connections to the rest of Taipei.",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:54:58.777Z"
+    "updated_at": "2026-05-14T15:37:11.259Z"
   },
   {
     "map_label_name": "松山文創園區",
