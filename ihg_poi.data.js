@@ -517,10 +517,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:37:53.251Z",
+    "updated_at": "2026-05-14T15:44:54.311Z",
     "notes_zh": "在地人氣麵館與滷味小吃，價格親切，適合晚餐或活動後想吃熱食宵夜。",
     "notes_en": "A popular local noodle shop serving simple, affordable noodles and braised snacks, convenient for dinner or a hot late-night bite after an event.",
-    "notes_ja": ""
+    "notes_ja": "地元で人気の麺料理と滷味の小吃店です。手頃な価格で、夕食やイベント後の温かい夜食に便利です。"
   },
   {
     "map_label_name": "蘇阿姨比薩屋",
