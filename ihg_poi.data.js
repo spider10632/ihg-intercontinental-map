@@ -547,12 +547,12 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_018",
     "display_order": 18,
     "notes_zh": "老字號披薩店，適合多人分享，想吃美式披薩與炸物時很方便。",
-    "notes_en": "",
+    "notes_en": "A long-running pizza restaurant suited to groups, especially for guests craving American-style pizza and fried sides.",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:55:49.538Z"
+    "updated_at": "2026-05-14T15:37:56.983Z"
   },
   {
     "map_label_name": "弘燁模型",
