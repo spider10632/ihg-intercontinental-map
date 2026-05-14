@@ -117,10 +117,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:37:02.938Z",
+    "updated_at": "2026-05-14T15:44:05.535Z",
     "notes_zh": "結合韓式料理與餐酒館氛圍，適合晚餐聚餐、賽後小酌或朋友聚會。",
     "notes_en": "A Korean dining and bar concept with a lively atmosphere, well suited for dinner gatherings, drinks after an event, or a casual meal with friends.",
-    "notes_ja": ""
+    "notes_ja": "韓国料理とバーの雰囲気を楽しめるお店です。夕食の集まりやイベント後の一杯、友人とのカジュアルなお食事に向いています。"
   },
   {
     "map_label_name": "湊湊火鍋•茶憩 大巨蛋店",
