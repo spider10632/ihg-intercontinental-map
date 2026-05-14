@@ -862,9 +862,9 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:56:31.224Z",
+    "updated_at": "2026-05-14T15:38:33.762Z",
     "notes_zh": "以鯛魚湯底拉麵為特色，口味細緻，適合想吃日式麵食的午晚餐。",
-    "notes_en": "",
+    "notes_en": "A Japanese ramen shop featuring sea bream-based broth with a delicate flavor profile, suitable for lunch or dinner.",
     "notes_ja": ""
   },
   {
