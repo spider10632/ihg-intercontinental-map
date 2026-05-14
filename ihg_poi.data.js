@@ -268,10 +268,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:37:22.887Z",
+    "updated_at": "2026-05-14T15:44:24.276Z",
     "notes_zh": "麻辣鍋香氣濃郁、適合多人聚餐，距離大巨蛋不遠，是晚餐與宵夜的熱門選擇。",
     "notes_en": "A well-known spicy hot pot restaurant with rich, aromatic broths, popular for group dinners near Taipei Dome.",
-    "notes_ja": ""
+    "notes_ja": "香り豊かな麻辣火鍋で知られる人気店です。台北ドーム周辺でのグループディナーに向いています。"
   },
   {
     "map_label_name": "gonnaPLUS地中海健康旗艦餐廳",
