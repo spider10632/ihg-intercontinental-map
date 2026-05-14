@@ -1095,20 +1095,20 @@
     "phone": "02 8787 8850",
     "opening_hours": "09:30 – 17:00",
     "near_mrt": "市政府站",
-    "notes": "來源：Google Maps 大巨蛋清單",
+    "notes": "由舊鐵道場域轉型的博物館，適合了解台灣鐵道文化與歷史建築。",
     "source_status": "map_only",
     "source_url": "https://www.google.com/maps/search/?api=1&query=25.0474346,121.5647175",
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_036",
     "display_order": 36,
-    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_zh": "由舊鐵道場域轉型的博物館，適合了解台灣鐵道文化與歷史建築。",
     "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-01T13:49:32.929Z"
+    "updated_at": "2026-05-14T12:57:04.757Z"
   },
   {
     "map_label_name": "博仁綜合醫院",
