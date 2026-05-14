@@ -894,7 +894,7 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:53:56.947Z",
+    "updated_at": "2026-05-14T12:53:59.424Z",
     "notes_zh": "",
     "notes_en": "",
     "notes_ja": ""
