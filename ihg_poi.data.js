@@ -986,9 +986,9 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:56:47.610Z",
+    "updated_at": "2026-05-14T15:38:48.321Z",
     "notes_zh": "牛肉麵店，適合晚餐時段來一碗熱湯麵，從大巨蛋周邊移動也不遠。",
-    "notes_en": "",
+    "notes_en": "A beef noodle restaurant suitable for a warm, comforting dinner within easy reach of the Taipei Dome area.",
     "notes_ja": ""
   },
   {
@@ -1015,9 +1015,9 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:56:52.355Z",
+    "updated_at": "2026-05-14T15:39:00.827Z",
     "notes_zh": "信義商圈大型百貨，餐飲、購物與轉乘機能完整，適合逛街或等候行程。",
-    "notes_en": "",
+    "notes_en": "A large department store in the Xinyi shopping district with dining, retail, and transit connections, useful for shopping or filling time between plans.",
     "notes_ja": ""
   },
   {
