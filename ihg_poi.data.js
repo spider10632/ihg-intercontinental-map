@@ -226,20 +226,20 @@ window.WANHUA_POI_DATA = [
     "phone": "02 2758 8008",
     "opening_hours": "09:00 – 18:00",
     "near_mrt": "國父紀念館站",
-    "notes": "來源：Google Maps 大巨蛋清單",
+    "notes": "台北代表性紀念館與城市廣場，可看展覽、儀隊交接，也適合順路散步。",
     "source_status": "map_only",
     "source_url": "https://www.google.com/maps/search/?api=1&query=25.041378299999998,121.5575216",
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_008",
     "display_order": 8,
-    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_zh": "台北代表性紀念館與城市廣場，可看展覽、儀隊交接，也適合順路散步。",
     "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-01T13:47:20.006Z"
+    "updated_at": "2026-05-14T12:55:06.702Z"
   },
   {
     "map_label_name": "青花驕麻辣鍋 台北光復南店",
