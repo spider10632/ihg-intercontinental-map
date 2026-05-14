@@ -149,9 +149,9 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:54:54.513Z",
+    "updated_at": "2026-05-14T15:37:06.733Z",
     "notes_zh": "火鍋與茶飲結合的聚餐選擇，營業到深夜，適合看完活動後續攤用餐。",
-    "notes_en": "",
+    "notes_en": "A popular hot pot restaurant combining hearty broths with tea drinks, open late for guests looking for a relaxed meal after an event.",
     "notes_ja": ""
   },
   {
