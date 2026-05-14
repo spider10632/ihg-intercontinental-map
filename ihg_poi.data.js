@@ -674,10 +674,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:38:11.157Z",
+    "updated_at": "2026-05-14T15:45:13.995Z",
     "notes_zh": "蔬食餐酒館，菜色有設計感，適合素食者或想吃清爽無肉料理的聚會。",
     "notes_en": "A stylish plant-based bistro with creative dishes, ideal for vegetarian guests or anyone looking for a lighter meat-free meal.",
-    "notes_ja": ""
+    "notes_ja": "創意ある料理を提供するスタイリッシュなプラントベースのビストロです。ベジタリアンのお客様や軽めの食事を希望される方におすすめです。"
   },
   {
     "map_label_name": "地中海餐酒館 ABV Bar & Kitchen 台北光復店",
