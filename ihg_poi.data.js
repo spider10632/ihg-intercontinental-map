@@ -1164,12 +1164,12 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_038",
     "display_order": 38,
     "notes_zh": "日式漢堡排定食餐廳，適合午晚餐；炭火香氣明顯，建議留意衣物氣味。",
-    "notes_en": "",
+    "notes_en": "A Japanese hamburger steak set-meal restaurant for lunch or dinner; the charcoal aroma can be noticeable, so guests may want to plan accordingly.",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:57:13.077Z"
+    "updated_at": "2026-05-14T15:39:18.883Z"
   },
   {
     "map_label_name": "武蔵野森珈琲Diner",
