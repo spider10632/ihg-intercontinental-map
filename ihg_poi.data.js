@@ -52,9 +52,9 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:54:41.568Z",
+    "updated_at": "2026-05-14T15:36:55.182Z",
     "notes_zh": "臺北大巨蛋是信義區大型室內場館，適合觀賽、看演唱會，也能順遊周邊商場與餐飲。",
-    "notes_en": "",
+    "notes_en": "Taipei Dome is a major indoor venue in Xinyi, ideal for baseball games, concerts, and events, with shopping and dining options nearby.",
     "notes_ja": ""
   },
   {
