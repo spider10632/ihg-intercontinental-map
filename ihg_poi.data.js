@@ -390,10 +390,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:37:38.006Z",
+    "updated_at": "2026-05-14T15:44:39.280Z",
     "notes_zh": "美式漢堡專門店，份量實在、口味直接，適合想快速補充熱量的午晚餐。",
     "notes_en": "A casual American-style burger spot with generous portions, convenient for a quick and satisfying lunch or dinner.",
-    "notes_ja": ""
+    "notes_ja": "ボリュームのあるアメリカンスタイルのバーガー店です。手早くしっかり食べたいランチやディナーに便利です。"
   },
   {
     "map_label_name": "旬味 自然鍋物-台北美食 信義區美食 信義區火鍋 信義區火鍋推薦 信義區好吃推薦 信義區火鍋推薦 國父紀念館信義東區美食 台北大巨蛋美食 個人鴛鴦火鍋 火鍋美食",
