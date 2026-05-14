@@ -1197,10 +1197,10 @@ window.WANHUA_POI_DATA = [
     "display_order": 39,
     "notes_zh": "日系咖啡 Diner，供應早餐、咖啡與輕食，適合早晨或午後休息。",
     "notes_en": "A Japanese-style coffee diner serving breakfast, coffee, and light meals, suitable for a relaxed morning or afternoon break.",
-    "notes_ja": "",
+    "notes_ja": "日本風のコーヒーダイナーで、朝食、コーヒー、軽食を提供しています。朝の時間や午後の休憩にゆっくり利用できます。",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:39:22.881Z"
+    "updated_at": "2026-05-14T15:46:19.494Z"
   }
 ];
