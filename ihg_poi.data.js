@@ -486,10 +486,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:37:49.255Z",
+    "updated_at": "2026-05-14T15:44:50.582Z",
     "notes_zh": "日系風格義大利麵與咖啡餐廳，氛圍輕鬆，適合午餐、晚餐或聊天小聚。",
     "notes_en": "A relaxed Japanese-style pasta and cafe restaurant, suitable for lunch, dinner, coffee, or a casual catch-up.",
-    "notes_ja": ""
+    "notes_ja": "日本風のパスタとカフェメニューを楽しめる落ち着いたレストランです。ランチ、ディナー、コーヒー休憩や軽い集まりに向いています。"
   },
   {
     "map_label_name": "東引快刀手 光復店 (必吃知名宵夜美食、平價麵館 滷味小吃)",
