@@ -862,10 +862,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:38:33.762Z",
+    "updated_at": "2026-05-14T15:45:37.117Z",
     "notes_zh": "以鯛魚湯底拉麵為特色，口味細緻，適合想吃日式麵食的午晚餐。",
     "notes_en": "A Japanese ramen shop featuring sea bream-based broth with a delicate flavor profile, suitable for lunch or dinner.",
-    "notes_ja": ""
+    "notes_ja": "鯛だしのスープが特徴の日本式ラーメン店です。繊細な味わいで、ランチやディナーにおすすめです。"
   },
   {
     "map_label_name": "秦味館 Qin Wei Guan",
