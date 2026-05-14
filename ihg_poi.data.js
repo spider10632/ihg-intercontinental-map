@@ -539,20 +539,20 @@ window.WANHUA_POI_DATA = [
     "phone": "02 2740 2328",
     "opening_hours": "11:00 – 22:00",
     "near_mrt": "國父紀念館站",
-    "notes": "來源：Google Maps 大巨蛋清單",
+    "notes": "老字號披薩店，適合多人分享，想吃美式披薩與炸物時很方便。",
     "source_status": "map_only",
     "source_url": "https://www.google.com/maps/search/?api=1&query=25.0391419,121.5574355",
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_018",
     "display_order": 18,
-    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_zh": "老字號披薩店，適合多人分享，想吃美式披薩與炸物時很方便。",
     "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-01T18:20:23.041Z"
+    "updated_at": "2026-05-14T12:55:49.538Z"
   },
   {
     "map_label_name": "弘燁模型",
