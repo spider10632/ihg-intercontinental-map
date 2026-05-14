@@ -1015,10 +1015,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:39:00.827Z",
+    "updated_at": "2026-05-14T15:45:56.964Z",
     "notes_zh": "信義商圈大型百貨，餐飲、購物與轉乘機能完整，適合逛街或等候行程。",
     "notes_en": "A large department store in the Xinyi shopping district with dining, retail, and transit connections, useful for shopping or filling time between plans.",
-    "notes_ja": ""
+    "notes_ja": "信義ショッピングエリアにある大型百貨店です。飲食、買い物、交通アクセスがそろい、予定の合間にも立ち寄りやすい施設です。"
   },
   {
     "map_label_name": "Taipei 101 Rainbow Walk",
