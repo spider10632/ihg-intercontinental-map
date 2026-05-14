@@ -1076,9 +1076,9 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:57:00.686Z",
+    "updated_at": "2026-05-14T15:39:08.107Z",
     "notes_zh": "主打花雕雞與熱炒料理，口味濃郁，適合多人晚餐或宵夜聚餐。",
-    "notes_en": "",
+    "notes_en": "A restaurant specializing in Huadiao chicken and Taiwanese stir-fried dishes, best for flavorful group dinners or a late-night meal.",
     "notes_ja": ""
   },
   {
