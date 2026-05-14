@@ -422,10 +422,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:37:42.375Z",
+    "updated_at": "2026-05-14T15:44:43.171Z",
     "notes_zh": "個人鍋物餐廳，主打自然湯底與鴛鴦鍋，適合想安靜吃火鍋的午晚餐。",
     "notes_en": "An individual hot pot restaurant featuring natural broths and dual-flavor pots, ideal for a quieter lunch or dinner in the area.",
-    "notes_ja": ""
+    "notes_ja": "自然なスープと二色鍋が特徴の一人鍋レストランです。周辺で落ち着いて火鍋を楽しみたい時に向いています。"
   },
   {
     "map_label_name": "嵩 sung 台北大安",
