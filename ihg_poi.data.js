@@ -610,9 +610,9 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:55:57.788Z",
+    "updated_at": "2026-05-14T15:38:03.967Z",
     "notes_zh": "港式茶餐廳，供應燒臘、飯麵與港式飲品，適合快速又有飽足感的一餐。",
-    "notes_en": "",
+    "notes_en": "A Hong Kong-style cha chaan teng serving roast meats, rice, noodles, and classic drinks, good for a quick and filling meal.",
     "notes_ja": ""
   },
   {
