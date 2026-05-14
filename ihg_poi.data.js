@@ -799,10 +799,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:38:26.730Z",
+    "updated_at": "2026-05-14T15:45:29.287Z",
     "notes_zh": "信義區人氣碳烤吐司店，早餐時段很方便，適合外帶三明治與奶茶。",
     "notes_en": "A popular Xinyi breakfast shop known for charcoal-grilled toast, sandwiches, and milk tea, convenient for takeaway in the morning.",
-    "notes_ja": ""
+    "notes_ja": "信義エリアで人気の炭火焼きトースト店です。朝のテイクアウトに便利で、サンドイッチやミルクティーが楽しめます。"
   },
   {
     "map_label_name": "年三十鐵板串燒居酒屋 光復店",
