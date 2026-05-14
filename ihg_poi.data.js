@@ -454,10 +454,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:37:45.692Z",
+    "updated_at": "2026-05-14T15:44:46.856Z",
     "notes_zh": "現代台菜餐廳，菜色精緻、適合聚餐，從大巨蛋周邊步行或短程車程可達。",
     "notes_en": "A refined modern Taiwanese restaurant with polished presentation, suitable for a comfortable lunch or dinner gathering a short ride from Taipei Dome.",
-    "notes_ja": ""
+    "notes_ja": "洗練された盛り付けのモダン台湾料理レストランです。台北ドーム周辺から短時間で行ける、ゆったりしたランチやディナーに適しています。"
   },
   {
     "map_label_name": "HANNA Pasta Café パスタ カフェ",
