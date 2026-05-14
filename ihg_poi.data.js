@@ -1043,11 +1043,11 @@ window.WANHUA_POI_DATA = [
     "display_order": 34,
     "notes_zh": "彩虹地景步道鄰近市府與台北 101，適合拍照打卡並順遊信義商圈。",
     "notes_en": "A colorful rainbow walkway near Taipei City Hall and Taipei 101, popular for quick photos and easy to combine with a visit to the Xinyi district.",
-    "notes_ja": "",
+    "notes_ja": "台北市政府と台北101の近くにあるカラフルなレインボーウォークです。写真撮影や信義エリア散策と合わせて楽しめます。",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:39:04.469Z"
+    "updated_at": "2026-05-14T15:46:00.493Z"
   },
   {
     "map_label_name": "一品 花 雕 雞 市民旗艦店",
