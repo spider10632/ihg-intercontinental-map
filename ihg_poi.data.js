@@ -26,7 +26,7 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:54:37.186Z"
+    "updated_at": "2026-05-14T15:36:51.057Z"
   },
   {
     "map_label_name": "臺北大巨蛋",
@@ -54,7 +54,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:54:41.568Z",
     "notes_zh": "臺北大巨蛋是信義區大型室內場館，適合觀賽、看演唱會，也能順遊周邊商場與餐飲。",
-    "notes_en": "Taipei Dome is a major indoor venue in Xinyi, ideal for baseball games, concerts, and events, with shopping and dining options nearby.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -87,7 +87,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:54:45.577Z",
     "notes_zh": "主打酪梨與健康輕食的餐廳，適合早午餐、輕食或想吃清爽餐點時造訪。",
-    "notes_en": "A health-focused restaurant known for avocado dishes and lighter fare, suitable for brunch, a casual lunch, or a refreshing meal near Taipei Dome.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -119,7 +119,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:54:50.190Z",
     "notes_zh": "結合韓式料理與餐酒館氛圍，適合晚餐聚餐、賽後小酌或朋友聚會。",
-    "notes_en": "A Korean dining and bar concept with a lively atmosphere, well suited for dinner gatherings, drinks after an event, or a casual meal with friends.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -151,7 +151,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:54:54.513Z",
     "notes_zh": "火鍋與茶飲結合的聚餐選擇，營業到深夜，適合看完活動後續攤用餐。",
-    "notes_en": "A popular hot pot restaurant combining hearty broths with tea drinks, open late for guests looking for a relaxed meal after an event.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -176,7 +176,7 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_006",
     "display_order": 6,
     "notes_zh": "距離大巨蛋最近的捷運站之一，從飯店或場館移動到台北各區都很方便。",
-    "notes_en": "One of the closest MRT stations to Taipei Dome, offering convenient access from the hotel and easy connections to the rest of Taipei.",
+    "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
@@ -205,7 +205,7 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_007",
     "display_order": 7,
     "notes_zh": "由老菸廠改造的文創園區，集結展覽、設計商店、綠地與餐飲，適合散步拍照。",
-    "notes_en": "A former tobacco factory transformed into a cultural park, featuring exhibitions, design shops, green spaces, cafes, and photogenic walking paths.",
+    "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
@@ -234,7 +234,7 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_008",
     "display_order": 8,
     "notes_zh": "台北代表性紀念館與城市廣場，可看展覽、儀隊交接，也適合順路散步。",
-    "notes_en": "A landmark memorial hall and public plaza where guests can visit exhibitions, watch the guard-changing ceremony, and enjoy a relaxed walk.",
+    "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
@@ -270,7 +270,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:55:10.948Z",
     "notes_zh": "麻辣鍋香氣濃郁、適合多人聚餐，距離大巨蛋不遠，是晚餐與宵夜的熱門選擇。",
-    "notes_en": "A well-known spicy hot pot restaurant with rich, aromatic broths, popular for group dinners near Taipei Dome.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -302,7 +302,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:55:15.177Z",
     "notes_zh": "主打地中海風格與健康餐點，鄰近松菸，適合想吃均衡料理或清爽聚餐的人。",
-    "notes_en": "A Mediterranean-inspired restaurant near Songshan Cultural and Creative Park, offering balanced dishes for guests who prefer lighter, wholesome dining.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -327,7 +327,7 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_011",
     "display_order": 11,
     "notes_zh": "國父紀念館腹地寬廣、視野開闊，可欣賞台北 101 與周邊城市景觀。",
-    "notes_en": "The spacious grounds of the memorial hall offer open city views, including Taipei 101, and make a pleasant stop for sightseeing or a walk.",
+    "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
@@ -360,7 +360,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:55:24.372Z",
     "notes_zh": "結合書店、選物、展演與餐飲的百貨空間，適合逛街、買伴手禮或雨天備案。",
-    "notes_en": "A lifestyle department store combining books, design goods, exhibitions, restaurants, and gift shopping, also useful as a rainy-day option.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -392,7 +392,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:55:28.705Z",
     "notes_zh": "美式漢堡專門店，份量實在、口味直接，適合想快速補充熱量的午晚餐。",
-    "notes_en": "A casual American-style burger spot with generous portions, convenient for a quick and satisfying lunch or dinner.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -424,7 +424,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:55:32.837Z",
     "notes_zh": "個人鍋物餐廳，主打自然湯底與鴛鴦鍋，適合想安靜吃火鍋的午晚餐。",
-    "notes_en": "An individual hot pot restaurant featuring natural broths and dual-flavor pots, ideal for a quieter lunch or dinner in the area.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -456,7 +456,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:55:37.065Z",
     "notes_zh": "現代台菜餐廳，菜色精緻、適合聚餐，從大巨蛋周邊步行或短程車程可達。",
-    "notes_en": "A refined modern Taiwanese restaurant with polished presentation, suitable for a comfortable lunch or dinner gathering a short ride from Taipei Dome.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -488,7 +488,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:55:41.038Z",
     "notes_zh": "日系風格義大利麵與咖啡餐廳，氛圍輕鬆，適合午餐、晚餐或聊天小聚。",
-    "notes_en": "A relaxed Japanese-style pasta and cafe restaurant, suitable for lunch, dinner, coffee, or a casual catch-up.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -519,7 +519,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:55:45.218Z",
     "notes_zh": "在地人氣麵館與滷味小吃，價格親切，適合晚餐或活動後想吃熱食宵夜。",
-    "notes_en": "A popular local noodle shop serving simple, affordable noodles and braised snacks, convenient for dinner or a hot late-night bite after an event.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -547,7 +547,7 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_018",
     "display_order": 18,
     "notes_zh": "老字號披薩店，適合多人分享，想吃美式披薩與炸物時很方便。",
-    "notes_en": "A long-running pizza restaurant suited to groups, especially for guests craving American-style pizza and fried sides.",
+    "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
@@ -576,7 +576,7 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_019",
     "display_order": 19,
     "notes_zh": "模型與收藏品商店，適合對模型、玩具或周邊商品有興趣的旅客順逛。",
-    "notes_en": "A model and collectibles shop for guests interested in hobby items, toys, or character merchandise while exploring the neighborhood.",
+    "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
@@ -612,7 +612,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:55:57.788Z",
     "notes_zh": "港式茶餐廳，供應燒臘、飯麵與港式飲品，適合快速又有飽足感的一餐。",
-    "notes_en": "A Hong Kong-style cha chaan teng serving roast meats, rice, noodles, and classic drinks, good for a quick and filling meal.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -644,7 +644,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:56:01.878Z",
     "notes_zh": "主打溫體牛肉火鍋，湯頭清甜、肉品新鮮，適合喜歡台式鍋物的聚餐。",
-    "notes_en": "A Taiwanese fresh beef hot pot restaurant known for clear, naturally sweet broth and fresh beef, suitable for group dining.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -676,7 +676,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:56:05.943Z",
     "notes_zh": "蔬食餐酒館，菜色有設計感，適合素食者或想吃清爽無肉料理的聚會。",
-    "notes_en": "A stylish plant-based bistro with creative dishes, ideal for vegetarian guests or anyone looking for a lighter meat-free meal.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -708,7 +708,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:56:10.150Z",
     "notes_zh": "地中海風格餐酒館，啤酒選擇多、餐點份量適中，適合晚餐與朋友小酌。",
-    "notes_en": "A Mediterranean-style bar and kitchen with a broad beer selection and shareable dishes, suitable for dinner or casual drinks with friends.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -733,7 +733,7 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_024",
     "display_order": 24,
     "notes_zh": "鄰近大巨蛋的銀行分行，可處理提款、換匯或臨時金融需求。",
-    "notes_en": "A nearby Bank of Taiwan branch for ATM access, currency exchange, and other short-term banking needs during your stay.",
+    "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
@@ -770,7 +770,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:56:18.805Z",
     "notes_zh": "空間明亮的咖啡店，供應咖啡、輕食與甜點，適合早餐、工作或短暫休息。",
-    "notes_en": "A bright cafe serving coffee, light meals, and desserts, suitable for breakfast, remote work, or a short break near Taipei City Hall.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -801,7 +801,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:56:22.881Z",
     "notes_zh": "信義區人氣碳烤吐司店，早餐時段很方便，適合外帶三明治與奶茶。",
-    "notes_en": "A popular Xinyi breakfast shop known for charcoal-grilled toast, sandwiches, and milk tea, convenient for takeaway in the morning.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -832,7 +832,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:56:27.034Z",
     "notes_zh": "鐵板串燒居酒屋，晚間氣氛熱鬧，適合活動後用餐或小酌續攤。",
-    "notes_en": "A lively teppan skewer izakaya for evening dining, drinks, or a casual late-night stop after an event.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -864,7 +864,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:56:31.224Z",
     "notes_zh": "以鯛魚湯底拉麵為特色，口味細緻，適合想吃日式麵食的午晚餐。",
-    "notes_en": "A Japanese ramen shop featuring sea bream-based broth with a delicate flavor profile, suitable for lunch or dinner.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -896,7 +896,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:56:34.967Z",
     "notes_zh": "陝西風味餐館，麵食與特色菜有辨識度，適合想換口味的聚餐選擇。",
-    "notes_en": "A Shaanxi-style restaurant with distinctive noodles and regional dishes, recommended for guests who would like to try something different.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -927,7 +927,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:56:39.270Z",
     "notes_zh": "主打創意涼麵與麵飯料理，晚間營業，適合宵夜或想吃輕鬆小店時造訪。",
-    "notes_en": "A casual noodle shop specializing in creative cold noodles, rice, and noodle dishes, open in the evening for dinner or a light late-night meal.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -956,7 +956,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:56:43.269Z",
     "notes_zh": "信義區重要客運與公車轉運點，往返外縣市或轉乘市區交通都很方便。",
-    "notes_en": "A major bus and coach terminal in Xinyi, convenient for intercity travel as well as transfers to local transportation.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -988,7 +988,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:56:47.610Z",
     "notes_zh": "牛肉麵店，適合晚餐時段來一碗熱湯麵，從大巨蛋周邊移動也不遠。",
-    "notes_en": "A beef noodle restaurant suitable for a warm, comforting dinner within easy reach of the Taipei Dome area.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -1017,7 +1017,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:56:52.355Z",
     "notes_zh": "信義商圈大型百貨，餐飲、購物與轉乘機能完整，適合逛街或等候行程。",
-    "notes_en": "A large department store in the Xinyi shopping district with dining, retail, and transit connections, useful for shopping or filling time between plans.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -1042,7 +1042,7 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_034",
     "display_order": 34,
     "notes_zh": "彩虹地景步道鄰近市府與台北 101，適合拍照打卡並順遊信義商圈。",
-    "notes_en": "A colorful rainbow walkway near Taipei City Hall and Taipei 101, popular for quick photos and easy to combine with a visit to the Xinyi district.",
+    "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
@@ -1078,7 +1078,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:57:00.686Z",
     "notes_zh": "主打花雕雞與熱炒料理，口味濃郁，適合多人晚餐或宵夜聚餐。",
-    "notes_en": "A restaurant specializing in Huadiao chicken and Taiwanese stir-fried dishes, best for flavorful group dinners or a late-night meal.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -1103,7 +1103,7 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_036",
     "display_order": 36,
     "notes_zh": "由舊鐵道場域轉型的博物館，適合了解台灣鐵道文化與歷史建築。",
-    "notes_en": "A museum transformed from a historic railway site, offering a look at Taiwan's railway culture, industrial heritage, and preserved architecture.",
+    "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
@@ -1136,7 +1136,7 @@ window.WANHUA_POI_DATA = [
     "lng": 0,
     "updated_at": "2026-05-14T12:57:08.977Z",
     "notes_zh": "鄰近大巨蛋與光復南路的綜合醫院，可作為旅途中臨時醫療需求參考。",
-    "notes_en": "A general hospital near Taipei Dome and Guangfu South Road, useful as a reference point for urgent medical needs during travel.",
+    "notes_en": "",
     "notes_ja": ""
   },
   {
@@ -1164,7 +1164,7 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_038",
     "display_order": 38,
     "notes_zh": "日式漢堡排定食餐廳，適合午晚餐；炭火香氣明顯，建議留意衣物氣味。",
-    "notes_en": "A Japanese hamburger steak set-meal restaurant for lunch or dinner; the charcoal aroma can be noticeable, so guests may want to plan accordingly.",
+    "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
@@ -1196,7 +1196,7 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_039",
     "display_order": 39,
     "notes_zh": "日系咖啡 Diner，供應早餐、咖啡與輕食，適合早晨或午後休息。",
-    "notes_en": "A Japanese-style coffee diner serving breakfast, coffee, and light meals, suitable for a relaxed morning or afternoon break.",
+    "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
