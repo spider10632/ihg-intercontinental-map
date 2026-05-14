@@ -954,10 +954,10 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T15:38:44.966Z",
+    "updated_at": "2026-05-14T15:45:49.728Z",
     "notes_zh": "信義區重要客運與公車轉運點，往返外縣市或轉乘市區交通都很方便。",
     "notes_en": "A major bus and coach terminal in Xinyi, convenient for intercity travel as well as transfers to local transportation.",
-    "notes_ja": ""
+    "notes_ja": "信義区の主要なバス・長距離バスターミナルです。市外への移動や台北市内交通への乗り換えに便利です。"
   },
   {
     "map_label_name": "地一牛肉麵",
