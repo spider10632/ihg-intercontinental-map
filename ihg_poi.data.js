@@ -725,20 +725,20 @@ window.WANHUA_POI_DATA = [
     "phone": "02 2729 3111",
     "opening_hours": "09:00 – 15:30",
     "near_mrt": "市政府站",
-    "notes": "來源：Google Maps 大巨蛋清單",
+    "notes": "鄰近大巨蛋的銀行分行，可處理提款、換匯或臨時金融需求。",
     "source_status": "map_only",
     "source_url": "https://www.google.com/maps/search/?api=1&query=25.0409492,121.5638165",
     "is_active": true,
     "walk_10min_from_hotel": true,
     "id": "ihg_024",
     "display_order": 24,
-    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_zh": "鄰近大巨蛋的銀行分行，可處理提款、換匯或臨時金融需求。",
     "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-01T13:48:32.869Z"
+    "updated_at": "2026-05-14T12:56:14.316Z"
   },
   {
     "map_label_name": "CURISTA COFFEE奎士咖啡 市府旗艦店",
