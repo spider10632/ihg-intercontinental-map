@@ -205,12 +205,12 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_007",
     "display_order": 7,
     "notes_zh": "由老菸廠改造的文創園區，集結展覽、設計商店、綠地與餐飲，適合散步拍照。",
-    "notes_en": "",
+    "notes_en": "A former tobacco factory transformed into a cultural park, featuring exhibitions, design shops, green spaces, cafes, and photogenic walking paths.",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:55:02.829Z"
+    "updated_at": "2026-05-14T15:37:15.141Z"
   },
   {
     "map_label_name": "國父紀念館",
