@@ -1188,19 +1188,19 @@ window.WANHUA_POI_DATA = [
     "phone": "0227686118",
     "opening_hours": "07:30 – 22:00",
     "near_mrt": "國父紀念館站",
-    "notes": "來源：Google Maps 大巨蛋清單",
+    "notes": "日系咖啡 Diner，供應早餐、咖啡與輕食，適合早晨或午後休息。",
     "source_status": "map_only",
     "source_url": "https://maps.app.goo.gl/iapMK3uza9L43Nb17",
     "is_active": true,
     "walk_10min_from_hotel": false,
     "id": "ihg_039",
     "display_order": 39,
-    "notes_zh": "來源：Google Maps 大巨蛋清單",
+    "notes_zh": "日系咖啡 Diner，供應早餐、咖啡與輕食，適合早晨或午後休息。",
     "notes_en": "",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-01T13:49:47.867Z"
+    "updated_at": "2026-05-14T12:57:16.999Z"
   }
 ];
