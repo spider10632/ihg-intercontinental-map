@@ -894,9 +894,9 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:56:34.967Z",
+    "updated_at": "2026-05-14T15:38:37.371Z",
     "notes_zh": "陝西風味餐館，麵食與特色菜有辨識度，適合想換口味的聚餐選擇。",
-    "notes_en": "",
+    "notes_en": "A Shaanxi-style restaurant with distinctive noodles and regional dishes, recommended for guests who would like to try something different.",
     "notes_ja": ""
   },
   {
