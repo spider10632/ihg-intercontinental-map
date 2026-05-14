@@ -733,12 +733,12 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_024",
     "display_order": 24,
     "notes_zh": "鄰近大巨蛋的銀行分行，可處理提款、換匯或臨時金融需求。",
-    "notes_en": "",
+    "notes_en": "A nearby Bank of Taiwan branch for ATM access, currency exchange, and other short-term banking needs during your stay.",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:56:14.316Z"
+    "updated_at": "2026-05-14T15:38:19.622Z"
   },
   {
     "map_label_name": "CURISTA COFFEE奎士咖啡 市府旗艦店",
