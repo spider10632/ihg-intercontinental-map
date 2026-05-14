@@ -706,9 +706,9 @@ window.WANHUA_POI_DATA = [
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:56:10.150Z",
+    "updated_at": "2026-05-14T15:38:15.972Z",
     "notes_zh": "地中海風格餐酒館，啤酒選擇多、餐點份量適中，適合晚餐與朋友小酌。",
-    "notes_en": "",
+    "notes_en": "A Mediterranean-style bar and kitchen with a broad beer selection and shareable dishes, suitable for dinner or casual drinks with friends.",
     "notes_ja": ""
   },
   {
