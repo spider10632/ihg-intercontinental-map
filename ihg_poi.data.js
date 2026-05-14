@@ -1103,12 +1103,12 @@ window.WANHUA_POI_DATA = [
     "id": "ihg_036",
     "display_order": 36,
     "notes_zh": "由舊鐵道場域轉型的博物館，適合了解台灣鐵道文化與歷史建築。",
-    "notes_en": "",
+    "notes_en": "A museum transformed from a historic railway site, offering a look at Taiwan's railway culture, industrial heritage, and preserved architecture.",
     "notes_ja": "",
     "category": "",
     "lat": 0,
     "lng": 0,
-    "updated_at": "2026-05-14T12:57:04.757Z"
+    "updated_at": "2026-05-14T15:39:11.566Z"
   },
   {
     "map_label_name": "博仁綜合醫院",
